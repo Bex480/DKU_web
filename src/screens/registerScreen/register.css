@@ -1,0 +1,149 @@
+.mainContainer{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: lightgreen;
+}
+
+.firstSection{
+    background-color: lightgrey;
+    width: 40%;
+    height: 100%;
+}
+
+.firstSectionImage{
+    margin-top: 10%;
+    width: 90%;
+    height: 65%;
+}
+
+.firstSectionQuote{
+    font-style: italic;
+    font-size: 1.5vw;
+    color: grey;
+    width: 60%;
+    margin: 5% 0 0 18%;
+}
+
+.firstSectionName{
+    margin-right: 6%;
+    font-size: 1.2vw;   
+}
+
+.secondSection{
+    background-color: white;
+    width: 60%;
+    height: 100%;
+}
+
+.secondSectionHeader{
+    margin-top: 5%;
+    font-size: 2.5vw;
+}
+
+.secondSectionIntro{
+    color: grey;
+    font-size: 1.3vw;
+}
+
+.secondSectionInputContainer{
+    margin: 5% 60% 0 0;
+}
+
+.secondSectionForm{
+    height: 55%;
+}
+
+.secondSectionInputName{
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 0 0 5% 23%;
+}
+
+.secondSectionInput{
+    border-radius: 15px;
+    border: 2px solid lightgrey;
+    box-shadow: 0px 3px 5px 0px lightgrey;
+    background-color: rgb(248, 248, 248);
+    height: 5vh;
+    width: 40vw;
+    margin-left: 20%;
+    padding-left: 25%;
+    font-size: 3vh;
+    background-image: url('./registarAssets/LockIcon.png');
+    background-repeat: no-repeat;
+    background-position: 2.5%;
+}
+
+.secondSectionPassKeep{
+    margin: 4% 0 0 0;
+    width: 4%;
+    cursor: pointer;
+}
+
+.secondSectionLabel{
+    margin: 0 60% 0 0;
+    font-size: 1.4vw;
+}
+
+.secondSectionRegisterButton{
+    width: 40%;
+    height: 13%;
+    margin: 8% 0 0 0 ;
+    background-color: lightblue;
+    color: rgb(112, 112, 112);
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    font-size: 2vw;
+}
+
+.secondSectionRegisterButton:active{
+    background-color: lightblue;
+    box-shadow: 0 4px lightgrey;
+    transform: translateY(4px);
+}
+
+.secondSectionRegisterButton:hover{
+    cursor: pointer;
+}
+
+.secondSectionGoogleButton{
+    width: 40%;
+    height: 7.5%;
+    padding-left: 3.5%;
+    background-color: white;
+    color: rgb(112, 112, 112);
+    font-weight: bold;
+    border-radius: 50px;
+    border: 3px solid lightblue;
+    font-size: 1.12vw;
+    background-image: url('./registarAssets/GoogleIcon.png');
+    background-repeat: no-repeat;
+    background-position: 6.5%;
+    background-size: 8%;
+}
+
+.secondSectionGoogleButton:active{
+    background-color: white;
+    box-shadow: 0 4px lightgrey;
+    transform: translateY(4px);
+}
+
+.secondSectionGoogleButton:hover{
+    cursor: pointer;
+}
+
+.secondSectionPitanje{
+    font-size: 120%;
+}
+
+.secondSectionNav{
+    color: blue;
+}
+
+.secondSectionNav:hover{
+    cursor: pointer;
+}
