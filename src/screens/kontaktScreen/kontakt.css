@@ -15,66 +15,35 @@
     border-bottom: 3px solid gold;
 }
 
-.sectionOneHeaderBigScreen{
+.sectionOneHeader{
     margin-top: 10vh;
-    font-size: 6vh;
-}
-
-.sectionOneHeaderSmallScreen{
-    margin-top: 18vh;
-    font-size: 5vh;
-    margin-left: 2vw;
+    font-size: 3.2vw;
 }
 
 .sectionOneForm{
     display: flex;
     flex-flow: column;
-    margin-left: 10vw;
+    margin-left: 18%;
 }
 
-.sectionOneNameInputBigScreen{
+.sectionOneNameInput{
     border-radius: 5px;
     height: 6vh;
     width: 30vw;
     border-color: lightgrey;
     border-style: double;
-    padding-left: 1vw;
+    padding-left: 3%;
     font-size: 2.3vh;
     margin-bottom: 7vh;
 }
 
-.sectionOneNameInputSmallScreen{
-    border-radius: 5px;
-    height: 5vh;
-    width: 30vw;
-    border-color: lightgrey;
-    border-style: double;
-    padding-left: 1vw;
-    font-size: 2.3vh;
-    margin-bottom: 4vh;
-}
-
-.sectionOneMessageInputBigScreen{
+.sectionOneMessageInput{
     border-radius: 5px;
     height: 20vh;
     width: 30vw;
     border-color: lightgrey;
     border-style: double;
-    padding-left: 1vw;
-    font-size: 2.5vh;
-    margin-bottom: 7vh;
-    resize: none;
-    padding-top: 1vh;
-    font-weight: lighter;
-}
-
-.sectionOneMessageInputSmallScreen{
-    border-radius: 5px;
-    height: 20vh;
-    width: 30vw;
-    border-color: lightgrey;
-    border-style: double;
-    padding-left: 1vw;
+    padding-left: 3%;
     font-size: 2.5vh;
     margin-bottom: 7vh;
     resize: none;
@@ -88,7 +57,7 @@
     background-color: gold;
     border-radius: 12px;
     border: none;
-    margin-left: 8vw;
+    margin-left: 20%;
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -111,113 +80,60 @@
     height: 90%;
     background-image: url(./kontaktAssets/kontaktInformacije.png);
     background-repeat: no-repeat;
-    background-position:center;
-    background-size: contain;
+    background-position: center;
+    background-size: 100% 100%;
     border-top: 3px solid gold;
     border-bottom: 3px solid gold;
 }
 
-.sectionTwoHeaderBigScreen{
+.sectionTwoHeader{
     margin-top: 10vh;
-    font-size: 6vh;
+    font-size: 3.5vw;
 }
 
-.sectionTwoHeaderSmallScreen{
-    margin-top: 18vh;
-    font-size: 5vh;
-}
-
-.mailIconBigScreen{
-    margin-right: 2vw;
+.mailIcon{
+    margin-right: 5%;
     src: url(./kontaktAssets/mailIcon.png);
 }
 
-.mailIconSmallScreen{
-    margin-right: 2vw;
-    src: url(./kontaktAssets/mailIcon.png);
-}
-
-.phoneIconBigScreen{
-    margin-right: 2vw;
+.phoneIcon{
+    margin-right: 5%;
     src: url(./kontaktAssets/phoneIcon.png);
 }
 
-.phoneIconSmallScreen{
-    margin-right: 2vw;
-    src: url(./kontaktAssets/phoneIcon.png);
-}
-
-.locationIconBigScreen{
-    margin-right: 2vw;
+.locationIcon{
+    margin-right: 5%;
     src: url(./kontaktAssets/locationIcon.png);
 }
 
-.locationIconSmallScreen{
-    margin-right: 2vw;
-    src: url(./kontaktAssets/locationIcon.png);
-}
-
-.mailTextBigScreen{
+.mailText{
     margin-top: 7vh;
-    margin-right: 7vw;
-    font-size: 5vh;
+    margin-right: 15%;
+    font-size: 2.9vw;
     color: grey;
 }
 
-.mailTextSmallScreen{
-    margin-top: 5vh;
-    margin-right: 13vw;
-    font-size: 4vh;
-    color: grey;
-}
-
-.phoneTextBigScreen{
+.phoneText{
     margin-top: 7vh;
     margin-right: 2vw;
-    font-size: 5vh;
+    font-size: 2.9vw;
     color: grey;
 }
 
-.phoneTextSmallScreen{
-    margin-top: 5vh;
-    margin-right: 8vw;
-    font-size: 4vh;
-    color: grey;
-}
-
-.locationTextBigScreen{
+.locationText{
     margin-top: 7vh;
-    font-size: 3vh;
+    font-size: 1.9vw;
     text-align: center;
     color: grey;
-    margin-left: 1vw;
+    margin-left: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.locationTextSmallScreen{
-    margin-top: 5vh;
-    font-size: 3vh;
-    text-align: center;
-    color: grey;
-    margin-left: 1vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.iconContainerBigScreen{
+.iconContainer{
     margin-top: 15vh;
     display: flex;
     justify-content: center;
     gap: 4vw;
 }
-
-.iconContainerSmallScreen{
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
-    gap: 4vw;
-}
-

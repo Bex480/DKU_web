@@ -1,6 +1,6 @@
 import './kontakt.css'
-import Polje1 from './polje1';
-import Polje2 from './polje2';
+import Polje1 from './kontaktPolje1';
+import Polje2 from './kontaktPolje2';
 
 function Kontakt() {
 

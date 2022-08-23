@@ -1,14 +1,16 @@
-import './register.css'
+import './registar.css'
 
-export default function Registar() {
+export default function Polje2 () {
 
     function InputField(props){
         return(
             <div className='secondSectionInputContainer'>
                 <p className='secondSectionInputName'>{props.sectionName}</p>
-                <input className='secondSectionInput' 
-                style={{backgroundImage: `url(${LoadImages(props.icon)})`}}
-                type={isPass ? 'password' : ''}></input>
+                <input 
+                    className='secondSectionInput' 
+                    style={{backgroundImage: `url(${LoadImages(props.icon)})`}}
+                    type={isPass ? 'password' : ''}>
+                </input>
             </div>
         )
     }
@@ -34,17 +36,7 @@ export default function Registar() {
     }
 
     return(
-        <div className='mainContainer'>
-            <section className='firstSection'>
-                <img className='firstSectionImage' src={require('./registarAssets/StudentImage.png')} alt='Cannot load resource'></img>
-                <article className='firstSectionQuote'>
-                “ Zahvaljujući DKU, imala sam priliku 
-                  da slomim nogu na fancy izletu
-                  i upoznam slatkog doktora. ”
-                </article>
-                <p className='firstSectionName'>Lejla M. učenica naše škole</p>
-            </section>
-            <section className='secondSection'>
+        <section className='secondSection'>
                 <h1 className='secondSectionHeader'>Registruj se</h1>
                 <article className='secondSectionIntro'>Pridruži nam se i postani volonter već danas...</article>
                 <form onSubmit={formSubmit} className='secondSectionForm'>
@@ -61,7 +53,6 @@ export default function Registar() {
                 </form>
                 <button className='secondSectionGoogleButton'>Prijava pomoću Google računa</button> 
                 <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
-            </section>
-        </div>
+        </section>
     )
 }

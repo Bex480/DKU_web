@@ -3,7 +3,7 @@
     height: 100%;
     width: 100%;
     display: flex;
-    background-color: lightgreen;
+    background-color: lightgrey;
 }
 
 .firstSection{
@@ -86,6 +86,10 @@
 .secondSectionLabel{
     margin: 0 60% 0 0;
     font-size: 1.4vw;
+}
+
+.secondSectionLabel:hover{
+    cursor: pointer;
 }
 
 .secondSectionRegisterButton{
