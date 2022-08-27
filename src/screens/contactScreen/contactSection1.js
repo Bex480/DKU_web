@@ -1,6 +1,6 @@
-import './kontakt.css'
+import './contact.css'
 
-export default function Polje1 () {
+export default function Section1 () {
     
     function formSubmit () {
         console.log("Submitano!!")

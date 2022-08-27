@@ -78,7 +78,7 @@
     margin-top: 2%;
     width: 60%;
     height: 90%;
-    background-image: url(./kontaktAssets/kontaktInformacije.png);
+    background-image: url(./contactAssets/contactInformacije.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -93,17 +93,17 @@
 
 .mailIcon{
     margin-right: 5%;
-    src: url(./kontaktAssets/mailIcon.png);
+    src: url(./contactAssets/mailIcon.png);
 }
 
 .phoneIcon{
     margin-right: 5%;
-    src: url(./kontaktAssets/phoneIcon.png);
+    src: url(./contactAssets/phoneIcon.png);
 }
 
 .locationIcon{
     margin-right: 5%;
-    src: url(./kontaktAssets/locationIcon.png);
+    src: url(./contactAssets/locationIcon.png);
 }
 
 .mailText{

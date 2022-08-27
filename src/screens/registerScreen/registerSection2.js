@@ -1,4 +1,4 @@
-import './registar.css'
+import './register.css'
 
 export default function Polje2 () {
 
@@ -25,13 +25,13 @@ export default function Polje2 () {
         switch(id) {
             case 1: 
                 isPass=0;
-                return require('./registarAssets/UserIcon.png');
+                return require('./registerAssets/UserIcon.png');
             case 2: 
                 isPass=1;
-                return require('./registarAssets/LockIcon.png');
+                return require('./registerAssets/LockIcon.png');
             default:
                 isPass=1;
-                return  require('./registarAssets/LockIcon.png');
+                return  require('./registerAssets/LockIcon.png');
         }
     }
 

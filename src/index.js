@@ -7,16 +7,18 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Kontakt from './screens/kontaktScreen/kontakt.js'
-import Registar from './screens/registerScreen/registar.js'
+import Contact from './screens/contactScreen/contact.js'
+import Register from './screens/registerScreen/register.js'
+import ProjectList from './screens/projectListScreen/projectList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="kontakt" element={<Kontakt />} />
-      <Route path="registar" element={<Registar />} />
+      <Route path="kontakt" element={<Contact/>} />
+      <Route path="registar" element={<Register />} />
+      <Route path="projekti" element={<ProjectList />} />
     </Routes>
   </BrowserRouter>
 );

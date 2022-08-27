@@ -1,6 +1,6 @@
-import './kontakt.css'
+import './contact'
 
-export default function Polje2 () {
+export default function Section2 () {
    
     function Informacije (props) {
         return(
@@ -24,21 +24,21 @@ export default function Polje2 () {
                     class='mailText' 
                     class2='mailIcon' 
                     message='@scilijas' 
-                    source={require('./kontaktAssets/mailIcon.png')}/>
+                    source={require('./contactAssets/mailIcon.png')}/>
                 <Informacije 
                     class='phoneText' 
                     class2='phoneIcon' 
                     message='033 400-813'  
-                    source={require('./kontaktAssets/phoneIcon.png')}/>
+                    source={require('./contactAssets/phoneIcon.png')}/>
                 <Informacije 
                     class='locationText' 
                     class2='locationIcon' 
                     message='Kakanjska 16, Ilijaš 71380'  
-                    source={require('./kontaktAssets/locationIcon.png')}/>
+                    source={require('./contactAssets/locationIcon.png')}/>
             <footer className='iconContainer'>
-                <Slike source={require('./kontaktAssets/facebookIcon.png')} alt='Failed to load'/>
-                <Slike source={require('./kontaktAssets/instagramIcon.png')} alt='Failed to load'/>
-                <Slike source={require('./kontaktAssets/messengerIcon.png')} alt='Failed to load'/>
+                <Slike source={require('./contactAssets/facebookIcon.png')} alt='Failed to load'/>
+                <Slike source={require('./contactAssets/instagramIcon.png')} alt='Failed to load'/>
+                <Slike source={require('./contactAssets/messengerIcon.png')} alt='Failed to load'/>
             </footer>
         </section>
     )

@@ -1,9 +1,9 @@
-import './registar.css'
+import './register.css'
 
 export default function Polje1 () {
     return(
         <section className='firstSection'>
-            <img className='firstSectionImage' src={require('./registarAssets/StudentImage.png')} 
+            <img className='firstSectionImage' src={require('./registerAssets/StudentImage.png')} 
             alt='Cannot load resource'></img>
             <article className='firstSectionQuote'>
             “ Zahvaljujući DKU, imala sam priliku 

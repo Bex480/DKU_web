@@ -1,6 +1,7 @@
 import './App.css';
-import Kontakt from './screens/kontaktScreen/kontakt.js'
-import Registar from './screens/registerScreen/registar.js'
+import Contact from './screens/contactScreen/contact'
+import Registar from './screens/registerScreen/register.js'
+import ProjectList from './screens/projectListScreen/projectList.js';
 import { Link, Outlet } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         </Link>
         <Link to="/registar">
           <button className='registerButton'>Registar</button>  
+        </Link>
+        <Link to="/projekti">
+          <button className='projectsButton'>Projekti</button>  
         </Link>
       </section>
     </div>
