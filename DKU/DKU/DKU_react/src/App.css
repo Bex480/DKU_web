@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+}
+
+.navigationButtons{
+  margin-top: 20%;
+}
+
+.contactButton{
+  background-color: lightblue;
+  width: 10vw;
+  height: 5vh;
+  margin-right: 5vw;
+}
+
+.contactButton:hover{
+  cursor: pointer;
+}
+
+.contactButton:active{
+  background-color: lightblue;
+  box-shadow: 0 4px lightgrey;
+  transform: translateY(4px);
+}
+
+.registerButton{
+  background-color: lightblue;
+  width: 10vw;
+  height: 5vh;
+  margin-right: 5vw;
+}
+
+.registerButton:hover{
+  cursor: pointer;
+}
+
+.registerButton:active{
+  background-color: lightblue;
+  box-shadow: 0 4px lightgrey;
+  transform: translateY(4px);
+}
+
+.projectsButton{
+  background-color: lightblue;
+  width: 10vw;
+  height: 5vh;
+  margin-right: 5vw;
+}
+
+.projectsButton:hover{
+  cursor: pointer;
+}
+
+.projectsButton:active{
+  background-color: lightblue;
+  box-shadow: 0 4px lightgrey;
+  transform: translateY(4px);
+}

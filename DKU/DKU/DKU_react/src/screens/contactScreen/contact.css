@@ -1,0 +1,139 @@
+.mainContainer {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: lightblue;
+}
+
+.sectionOne{
+    background-color: white;
+    margin-top: 2%;
+    width: 59.9%;
+    height: 90%;
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+}
+
+.sectionOneHeader{
+    margin-top: 10vh;
+    font-size: 3.2vw;
+}
+
+.sectionOneForm{
+    display: flex;
+    flex-flow: column;
+    margin-left: 18%;
+}
+
+.sectionOneNameInput{
+    border-radius: 5px;
+    height: 6vh;
+    width: 30vw;
+    border-color: lightgrey;
+    border-style: double;
+    padding-left: 3%;
+    font-size: 2.3vh;
+    margin-bottom: 7vh;
+}
+
+.sectionOneMessageInput{
+    border-radius: 5px;
+    height: 20vh;
+    width: 30vw;
+    border-color: lightgrey;
+    border-style: double;
+    padding-left: 3%;
+    font-size: 2.5vh;
+    margin-bottom: 7vh;
+    resize: none;
+    padding-top: 1vh;
+    font-weight: lighter;
+}
+
+.sectionOneButton{
+    height: 6vh;
+    width: 15vw;
+    background-color: gold;
+    border-radius: 12px;
+    border: none;
+    margin-left: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.sectionOneButton:active {
+    background-color: gold;
+    box-shadow: 0 4px lightgrey;
+    transform: translateY(4px);
+}
+
+.sectionOneButton:hover {
+    cursor: pointer;
+}
+
+.sectionTwo{
+    background-color: white;
+    margin-top: 2%;
+    width: 60%;
+    height: 90%;
+    background-image: url(./contactAssets/contactInformacije.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+}
+
+.sectionTwoHeader{
+    margin-top: 10vh;
+    font-size: 3.5vw;
+}
+
+.mailIcon{
+    margin-right: 5%;
+    src: url(./contactAssets/mailIcon.png);
+}
+
+.phoneIcon{
+    margin-right: 5%;
+    src: url(./contactAssets/phoneIcon.png);
+}
+
+.locationIcon{
+    margin-right: 5%;
+    src: url(./contactAssets/locationIcon.png);
+}
+
+.mailText{
+    margin-top: 7vh;
+    margin-right: 15%;
+    font-size: 2.9vw;
+    color: grey;
+}
+
+.phoneText{
+    margin-top: 7vh;
+    margin-right: 2vw;
+    font-size: 2.9vw;
+    color: grey;
+}
+
+.locationText{
+    margin-top: 7vh;
+    font-size: 1.9vw;
+    text-align: center;
+    color: grey;
+    margin-left: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconContainer{
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
