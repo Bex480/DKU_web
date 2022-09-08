@@ -1,16 +1,16 @@
 import './App.css';
-import Contact from './screens/contactScreen/contact'
-import Registar from './screens/registerScreen/register.js'
-import ProjectList from './screens/projectListScreen/projectList.js';
-import { Link, Outlet } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function App() {
+
+  const location = useLocation();
+
   return (
     <div className='App'>
-      <h1>Navigacija</h1>
+      <h1>Navigacija{location.state==null ? '000' : '111'}</h1>
       <section className='navigationButtons'>
         <Link to="/kontakt">
-          <button className='contactButton'>Kontakt</button>  
+          <button className='contactButton' onClick={() => alert(location.state)}>Kontakt</button>  
         </Link>
         <Link to="/registar">
           <button className='registerButton'>Registar</button>  
