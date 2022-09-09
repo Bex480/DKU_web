@@ -1,56 +1,22 @@
-import { useState } from 'react'
 import './register.css'
-import {useNavigate} from "react-router-dom";
 
-export default function Polje2 ({fun}) {
-
-    const [userToken, editToken] = useState(111)
-
-    function getToken(token){
-      editToken(token)
-    }
-
-    const navigate = useNavigate();
-
-    const passData = () => {
-        navigate('/', {state:{id: userToken, name:'sabaoon'}})
-    }
-
-    function formSubmit (event) {
-        event.preventDefault()
-        const rawData = JSON.stringify({
-            email: event.target.elements.first.value,
-            password: event.target.elements.second.value
-        })
-
-        fetch('http://127.0.0.1:8000/api/token/',{
-            method: 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: rawData
-        }).then(() => {
-            fetch("https://swapi.dev/api/people/1")
-            .then(res => res.json())
-            .then(data => console.log(data))
-        })
-
-      /*  fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        .then(data => console.log(data)) */
-    }
+export default function Polje2 () {
 
     function InputField(props){
         return(
             <div className='secondSectionInputContainer'>
                 <p className='secondSectionInputName'>{props.sectionName}</p>
                 <input 
-                    id={props.id}
                     className='secondSectionInput' 
                     style={{backgroundImage: `url(${LoadImages(props.icon)})`}}
-                    type={isPass ? 'password' : 'text'}
-                    name={props.name}>
+                    type={isPass ? 'password' : ''}>
                 </input>
             </div>
         )
+    }
+
+    function formSubmit () {
+        console.log("Submitano!!")
     }
     
     let isPass = 0;
@@ -75,27 +41,18 @@ export default function Polje2 ({fun}) {
                 <article className='secondSectionIntro'>Pridruži nam se i postani volonter već danas...</article>
                 <form onSubmit={formSubmit} className='secondSectionForm'>
                     <InputField 
-                        id='first'
-                        sectionName='Email adresa'
-                        icon={1}
-                        name='email'/>
-                    <InputField 
-                        id='second'
-                        sectionName='Šifra'
-                        icon={2}
-                        name='pass'/>
+                    sectionName='Email adresa'
+                    icon={1}/>
+                    <InputField sectionName='Šifra'
+                    icon={2}/>
                     <label className='secondSectionLabel'>
-                        <input type='checkbox' className='secondSectionPassKeep'/>
-                        Spremi zaporuku
+                    <input type='checkbox' className='secondSectionPassKeep'/>
+                    Spremi zaporuku
                     </label>
-                    <button 
-                        className='secondSectionRegisterButton'>
-                        Registruj se</button> 
+                    <button className='secondSectionRegisterButton'>Registruj se</button> 
                 </form>
-                <button className='secondSectionGoogleButton' 
-                    onClick={() => passData()}>
-                    Prijava pomoću Google računa</button> 
-                <p className='secondSectionPitanje'>Imate račun? {/*<a className='secondSectionNav'>Prijavite se</a> */}</p>
+                <button className='secondSectionGoogleButton'>Prijava pomoću Google računa</button> 
+                <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
         </section>
     )
 }
