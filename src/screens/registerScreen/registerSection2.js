@@ -30,10 +30,10 @@ export default function Polje2 () {
 
     function formSubmit (event) {
         event.preventDefault()
-        const rawData = {
-            email: event.target.elements.first.value,
+        const rawData = JSON.stringify({
+            username: event.target.elements.first.value,
             password: event.target.elements.second.value
-        }
+        })
         
         console.log(rawData.email)
 
@@ -41,11 +41,12 @@ export default function Polje2 () {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: rawData
-        }).then(() => {
+        })
+        /*.then(() => {
             fetch("https://swapi.dev/api/people/1")
             .then(res => res.json())
             .then(data => console.log(data))
-        })
+        }) */
 
       /*  fetch("https://swapi.dev/api/people/1")
         .then(res => res.json())
