@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w-2^@#!8u8%+)cce3m7gt1d%ln=e)t&mr*-1n77b@@&^^u88ww
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -124,10 +124,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
-        'HOST': 'containers-us-west-82.railway.app',
+        'HOST': 'containers-us-west-76.railway.app',
         'USER': 'postgres',
-        'PASSWORD': 'hPOY6fqFOvaXRnsBf7DS',
-        'PORT': '7103',
+        'PASSWORD': 'q4ADVu0utDdBIx8uEeAM',
+        'PORT': '6836',
     }
 }
 
@@ -169,8 +169,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'DKU_react/build/static')
+    os.path.join(BASE_DIR, 'DKU_react/build/static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -178,3 +180,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
