@@ -30,13 +30,13 @@ export default function Polje2() {
         })
 
         const fetchData = async () => {
-            try{
+            
                 await fetch('https://dku-web.vercel.app/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData
                 })
-                .then((response) => {
+                /*.then((response) => {
                     if(response.ok) {
                         return response.json()
                     }
@@ -54,10 +54,10 @@ export default function Polje2() {
         }catch (err) {
             console.error(err)
             changeStatus(false)
-        }}
-
-        fetchData()
+        }}*/
     }
+    fetchData()
+}
 
     let isPass = 0;
 
