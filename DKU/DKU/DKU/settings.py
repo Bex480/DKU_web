@@ -122,7 +122,7 @@ WSGI_APPLICATION = 'DKU.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django_psdb_engine',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('PLANETSCALE_DB'),
         'HOST': os.environ.get('PLANETSCALE_DB_HOST'),
         'PORT': os.environ.get('3306'),
