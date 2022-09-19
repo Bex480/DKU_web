@@ -12,9 +12,11 @@ export default function Polje2() {
                 <p className='secondSectionInputName'>{props.sectionName}</p>
                 <input
                     id={props.id}
-                    className='secondSectionInputT'
+                    className={status ? 'secondSectionInputT': 'secondSectionInputF'}
+                    name={props.name}
                     style={{ backgroundImage: `url(${LoadImages(props.icon)})` }}
-                    type={isPass ? 'password' : ''}>
+                    type={isPass ? 'password' : 'text'}
+                    >
                 </input>
             </div>
         )
@@ -27,7 +29,6 @@ export default function Polje2() {
             password: event.target.elements.second.value
         })
 
-        
         const fetchData = async () => {
             try{
                 await fetch('https://dku-web.vercel.app/api/token/', {
@@ -47,6 +48,7 @@ export default function Polje2() {
                     var refreshToken = jwt_decode(responseData.refresh)
                     var accessToken = jwt_decode(responseData.refresh)
                     console.log(refreshToken.user_id)
+                    changeStatus(true)
                 })
                 
         }catch (err) {
@@ -90,7 +92,7 @@ export default function Polje2() {
                     name='pass' />
                     {status ? <></> : <p 
                     className='secondSectionInputFail'>
-                    Login podaci netačni ili nepotpuni</p>}
+                    *Login podaci netačni ili nepotpuni</p>}
                 <label className='secondSectionLabel'>
                     <input type='checkbox' className='secondSectionPassKeep' />
                     Spremi zaporuku
