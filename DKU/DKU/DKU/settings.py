@@ -122,12 +122,13 @@ WSGI_APPLICATION = 'DKU.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'HOST': 'containers-us-west-90.railway.app',
-        'USER': 'postgres',
-        'PASSWORD': 'VaYmiXz3408Oie7coZUm',
-        'PORT': '8076',
+        'ENGINE': 'django_psdb_engine',
+        'NAME': os.environ.get('PLANETSCALE_DB'),
+        'HOST': os.environ.get('PLANETSCALE_DB_HOST'),
+        'PORT': os.environ.get('3306'),
+        'USER': os.environ.get('PLANETSCALE_DB_USERNAME'),
+        'PASSWORD': os.environ.get('PLANETSCALE_DB_PASSWORD'),
+        'OPTIONS': {'ssl': {'ca': os.environ.get('PLANETSCALE_SSL_CERT_PATH')}}
     }
 }
 
