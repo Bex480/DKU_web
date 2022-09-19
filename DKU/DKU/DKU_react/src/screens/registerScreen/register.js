@@ -3,6 +3,7 @@ import Section1 from './registerSection1.js'
 import Section2 from './registerSection2.js'
 
 export default function Registar() {
+
     return(
         <div className='mainContainer'>
             <Section1 /> {/* Polje sa slikom i porukom */}
