@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os.path
 from pathlib import Path
+import dj_database_url
 
 from datetime import timedelta
 
@@ -121,15 +122,11 @@ WSGI_APPLICATION = 'DKU.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': os.environ.get('PLANETSCALE_DB'),
-        'HOST': os.environ.get('PLANETSCALE_DB_HOST'),
-        'PORT': os.environ.get('3306'),
-        'USER': os.environ.get('PLANETSCALE_DB_USERNAME'),
-        'PASSWORD': os.environ.get('PLANETSCALE_DB_PASSWORD'),
-        'OPTIONS': {'ssl': {'ca': os.environ.get('PLANETSCALE_SSL_CERT_PATH')}}
-    }
+    'default': dj_database_url.config(default='postgresql://USER:sw8Nmn3QUJk1rKzeniR7Fw@free-tier5.gcp'
+                                                         '-europe-west1.cockroachlabs.cloud:26257/defaultdb?sslmode'
+                                                         '=verify-full&options=--cluster%3Ddku-web-5239',
+                                                          engine='django_cockroachdb')
+
 }
 
 
