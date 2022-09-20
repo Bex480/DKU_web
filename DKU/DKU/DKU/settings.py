@@ -122,11 +122,7 @@ WSGI_APPLICATION = 'DKU.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://USER:sw8Nmn3QUJk1rKzeniR7Fw@free-tier5.gcp'
-                                                         '-europe-west1.cockroachlabs.cloud:26257/defaultdb?sslmode'
-                                                         '=verify-full&options=--cluster%3Ddku-web-5239',
-                                                          engine='django_cockroachdb')
-
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'], engine='django_cockroachdb')
 }
 
 
