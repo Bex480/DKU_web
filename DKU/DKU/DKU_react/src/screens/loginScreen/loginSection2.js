@@ -1,5 +1,5 @@
 import './login.css'
-//import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 import React, { useState } from 'react';
 
 export default function Section2() {
@@ -29,8 +29,9 @@ export default function Section2() {
             password: event.target.elements.second.value
         })
 
+        const fetchData = async () => {
             try{
-                fetch('https://dku-web.vercel.app/api/token/', {
+                await fetch('https://dku-web.vercel.app/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData
@@ -44,15 +45,15 @@ export default function Section2() {
                     }
                 })
                 .then((responseData) => {
-                    //var refreshToken = jwt_decode(responseData.refresh)
-                    //var accessToken = jwt_decode(responseData.refresh)
-                    //console.log(refreshToken.user_id)
+                    var refreshToken = jwt_decode(responseData.refresh)
+                    var accessToken = jwt_decode(responseData.refresh)
+                    console.log(refreshToken.user_id)
                 })
                 
         }catch (err) {
             console.error(err)
             changeStatus(false)
-        }
+        }}
 
 }
 
