@@ -2,7 +2,7 @@ import './register.css'
 import Section1 from './registerSection1.js'
 import Section2 from './registerSection2.js'
 
-export default function Registar() {
+export default function Register() {
 
     return(
         <div className='mainContainer'>

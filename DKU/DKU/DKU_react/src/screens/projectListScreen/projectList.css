@@ -20,6 +20,7 @@
     color: darkgrey;
     margin: 2vh 3vw 0 0;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navigationOption:hover{

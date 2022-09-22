@@ -16,6 +16,7 @@ export default function Polje2() {
                     name={props.name}
                     style={{ backgroundImage: `url(${LoadImages(props.icon)})` }}
                     type={isPass ? 'password' : 'text'}
+                    autoComplete='off'
                     >
                 </input>
             </div>
@@ -29,14 +30,13 @@ export default function Polje2() {
             password: event.target.elements.second.value
         })
 
-        const fetchData = async () => {
-            
-                await fetch('https://dku-web.vercel.app/api/token/', {
+            try{
+                fetch('https://dku-web.vercel.app/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData
                 })
-                /*.then((response) => {
+                .then((response) => {
                     if(response.ok) {
                         return response.json()
                     }
@@ -47,16 +47,15 @@ export default function Polje2() {
                 .then((responseData) => {
                     var refreshToken = jwt_decode(responseData.refresh)
                     var accessToken = jwt_decode(responseData.refresh)
+                    localStorage.setItem('id',refreshToken.user_id)
                     console.log(refreshToken.user_id)
-                    changeStatus(true)
                 })
                 
         }catch (err) {
             console.error(err)
             changeStatus(false)
-        }}*/
-    }
-    fetchData()
+        }
+
 }
 
     let isPass = 0;
