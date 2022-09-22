@@ -1,5 +1,5 @@
 import './register.css'
-import jwt_decode from "jwt-decode";
+//import jwt_decode from "jwt-decode";
 import React, { useState } from 'react';
 
 export default function Polje2() {
@@ -45,10 +45,10 @@ export default function Polje2() {
                     }
                 })
                 .then((responseData) => {
-                    var refreshToken = jwt_decode(responseData.refresh)
-                    var accessToken = jwt_decode(responseData.refresh)
-                    localStorage.setItem('id',refreshToken.user_id)
-                    console.log(refreshToken.user_id)
+                   // var refreshToken = jwt_decode(responseData.refresh)
+                   // var accessToken = jwt_decode(responseData.refresh)
+                    //localStorage.setItem('id',refreshToken.user_id)
+                    //console.log(refreshToken.user_id)
                 })
                 
         }catch (err) {

@@ -1,5 +1,5 @@
 import './login.css'
-import jwt_decode from "jwt-decode";
+//import jwt_decode from "jwt-decode";
 import React, { useState } from 'react';
 
 export default function Section2() {
@@ -44,9 +44,9 @@ export default function Section2() {
                     }
                 })
                 .then((responseData) => {
-                    var refreshToken = jwt_decode(responseData.refresh)
-                    var accessToken = jwt_decode(responseData.refresh)
-                    console.log(refreshToken.user_id)
+                    //var refreshToken = jwt_decode(responseData.refresh)
+                    //var accessToken = jwt_decode(responseData.refresh)
+                    //console.log(refreshToken.user_id)
                 })
                 
         }catch (err) {
