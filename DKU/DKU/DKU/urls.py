@@ -12,6 +12,6 @@ urlpatterns = [
     path('projekti', TemplateView.as_view(template_name='index.html')),
     path('api/', include('api.urls')),
 
-    path('register', Register.as_view())
+    path('register', Register)
 ]
 
