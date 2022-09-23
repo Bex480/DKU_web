@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist'
+    
+    'register'
 ]
 
 REST_FRAMEWORK = {
