@@ -28,7 +28,7 @@ export default function Section2() {
             username: event.target.elements.first.value,
             password: event.target.elements.second.value
         })
-        const hostName = window.location.hostname; 
+        const hostName=window.location.hostname; 
 
         const fetchData = async () => {
             try{
