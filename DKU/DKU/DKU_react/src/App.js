@@ -1,10 +1,8 @@
 import './App.css';
 import { Link } from "react-router-dom";
-//import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
-
-  //const [userData, changeUserData] = useState(null)
 
   return (
     <div className='App'>

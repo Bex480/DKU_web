@@ -28,10 +28,10 @@ export default function Section2() {
             username: event.target.elements.first.value,
             password: event.target.elements.second.value
         })
-
+        const hostName = window.location.hostname; 
         const fetchData = async () => {
             try{
-                await fetch('https://dku-web.vercel.app/api/token/', {
+                await fetch('https://'+{hostName}+'/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData
@@ -47,6 +47,7 @@ export default function Section2() {
                 .then((responseData) => {
                     var refreshToken = jwt_decode(responseData.refresh)
                     var accessToken = jwt_decode(responseData.refresh)
+                    localStorage.setItem('id', JSON.stringify(refreshToken))
                     console.log(refreshToken.user_id)
                 })
                 
@@ -54,7 +55,7 @@ export default function Section2() {
             console.error(err)
             changeStatus(false)
         }}
-
+        fetchData()
 }
 
     let isPass = 0;

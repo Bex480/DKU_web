@@ -6,6 +6,10 @@ import RouteManager from './RouteManager';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+/*setInterval(() => {
+  alert('hi')
+}, 2000); */
+
 root.render(
   <RouteManager />
 );

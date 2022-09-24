@@ -1,6 +1,7 @@
 import './register.css'
 import jwt_decode from "jwt-decode";
 import React, { useState } from 'react';
+import { icons } from 'react-icons';
 
 export default function Polje2() {
 
@@ -9,9 +10,9 @@ export default function Polje2() {
     function InputField(props) {
         return (
             <div className='secondSectionInputContainer'>
-                <p className='secondSectionInputName'>{props.sectionName}</p>
                 <input
                     id={props.id}
+                    placeholder={props.placeholder}
                     className={status ? 'secondSectionInputT': 'secondSectionInputF'}
                     name={props.name}
                     style={{ backgroundImage: `url(${LoadImages(props.icon)})` }}
@@ -24,19 +25,54 @@ export default function Polje2() {
     }
 
     function formSubmit(event) {
-        event.preventDefault()
-        const rawData = JSON.stringify({
-            username: event.target.elements.first.value,
-            password: event.target.elements.second.value
+        event.preventDefault()    
+        const rawRegisterData = JSON.stringify({
+            first_name: event.target.elements.first.value,
+            last_name: event.target.elements.second.value,
+            username: event.target.elements.third.value,
+            email: event.target.elements.fourth.value,
+            password: event.target.elements.fifth.value,
+            date_joined: new Date().toJSON().slice(0, 10)
         })
 
-        
+        const rawLoginData = JSON.stringify({
+            username: event.target.elements.third.value,
+            password: event.target.elements.fifth.value,
+        })
+
         const fetchData = async () => {
+            try{
+                await fetch('https://dku-web.vercel.app/register/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: rawRegisterData
+                })
+                .then((response) => {
+                    if(response.ok) {
+                        console.log(response)
+                        fetchUser()
+                        return response.json()
+                    }
+                    else {
+                        throw response
+                    }
+                })
+                .then((responseData) => {
+                    console.log(responseData)
+                    changeStatus(true)
+                })
+                
+        }catch (err) {
+            console.error(err)
+            changeStatus(false)
+        }}
+
+        const fetchUser = async () => {
             try{
                 await fetch('https://dku-web.vercel.app/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
-                    body: rawData
+                    body: rawLoginData
                 })
                 .then((response) => {
                     if(response.ok) {
@@ -49,7 +85,7 @@ export default function Polje2() {
                 .then((responseData) => {
                     var refreshToken = jwt_decode(responseData.refresh)
                     var accessToken = jwt_decode(responseData.refresh)
-                    localStorage.setItem('id', refreshToken.user_id)
+                    localStorage.setItem('id', JSON.stringify(refreshToken))
                     console.log(refreshToken.user_id)
                 })
                 
@@ -58,7 +94,7 @@ export default function Polje2() {
             changeStatus(false)
         }}
 
-        fetchData()
+        fetchData() 
     }
 
     let isPass = 0;
@@ -82,27 +118,37 @@ export default function Polje2() {
             <h1 className='secondSectionHeader'>Registruj se</h1>
             <article className='secondSectionIntro'>Pridruži nam se i postani volonter već danas...</article>
             <form onSubmit={formSubmit} className='secondSectionForm'>
+                <div className='topFormContainer'>
+                    <input 
+                        id='first'
+                        placeholder='First-Name'
+                        autoComplete='off'></input>
+                    <input 
+                        id='second'
+                        placeholder='Last-Name'
+                        autoComplete='off'></input>
+                </div>  
                 <InputField
-                    id='first'
-                    sectionName='Email adresa'
+                    id='third'
+                    placeholder='Username'
                     icon={1}
                     name='email' />
                 <InputField
-                    id='second'
-                    sectionName='Šifra'
+                    id='fourth'
+                    placeholder='E-mail'
+                    icon={1}
+                    name='email' />
+                <InputField
+                    id='fifth'
+                    placeholder='Password'
                     icon={2}
                     name='pass' />
                     {status ? <></> : <p 
                     className='secondSectionInputFail'>
                     *Login podaci netačni ili nepotpuni</p>}
-                <label className='secondSectionLabel'>
-                    <input type='checkbox' className='secondSectionPassKeep' />
-                    Spremi zaporuku
-                </label>
                 <button className='secondSectionRegisterButton'>Registruj se</button>
+                <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
             </form>
-            <button className='secondSectionGoogleButton'>Prijava pomoću Google računa</button>
-            <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
         </section>
     )
 }
