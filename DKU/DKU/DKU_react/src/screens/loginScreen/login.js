@@ -1,8 +1,8 @@
-import './register.css'
-import Section1 from './registerSection1.js'
-import Section2 from './registerSection2.js'
+import './login.css'
+import Section1 from './loginSection1.js'
+import Section2 from './loginSection2.js'
 
-export default function Register() {
+export default function Login() {
 
     return(
         <div className='mainContainer'>
