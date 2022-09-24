@@ -29,9 +29,10 @@ export default function Section2() {
             password: event.target.elements.second.value
         })
         const hostName = window.location.hostname; 
+
         const fetchData = async () => {
             try{
-                await fetch('https://'+{hostName}+'/api/token/', {
+                await fetch('https://'+hostName+'/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData

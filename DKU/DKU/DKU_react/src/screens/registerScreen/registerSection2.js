@@ -32,7 +32,6 @@ export default function Polje2() {
             username: event.target.elements.third.value,
             email: event.target.elements.fourth.value,
             password: event.target.elements.fifth.value,
-            date_joined: new Date().toJSON().slice(0, 10)
         })
 
         const rawLoginData = JSON.stringify({
