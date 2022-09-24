@@ -1,10 +1,14 @@
+import { useContext } from 'react'
+import { AccountContext } from '../../../userContext/userContext'
 import '../projectList.css'
 
 export default function MainHeader () {
 
+    const {userData, changeUserData} = useContext(AccountContext)
+
     function NavigationOption (props) {
         return(
-            <a className='navigationOption'>
+            <a className='navigationOption' href='a'>
                 {props.title}
             </a>
         )
