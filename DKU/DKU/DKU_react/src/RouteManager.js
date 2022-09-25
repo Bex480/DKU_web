@@ -13,7 +13,9 @@ import { AccountContext } from "./userContext/userContext";
 
 export default function RouteManager () {
 
-    const [userData, changeUserData] = useState('Ovdje ide user data!')
+    const [userData, changeUserData] = useState({
+        host: window.location.hostname
+    })
 
     return(
     <BrowserRouter>

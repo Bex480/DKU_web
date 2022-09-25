@@ -1,21 +1,34 @@
 import './login.css'
 import jwt_decode from "jwt-decode";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
+import { AccountContext } from '../../userContext/userContext';
 
 export default function Section2() {
 
     const [status, changeStatus] = useState(true)
+    const navigate = useNavigate();
+    const userInfo = useContext(AccountContext)
+
+    useEffect(() => {
+        if(localStorage.getItem('id') === null)
+            return
+        else{
+            navigate('/')
+        }
+    })
 
     function InputField(props) {
         return (
             <div className='secondSectionInputContainer'>
-                <p className='secondSectionInputName'>{props.sectionName}</p>
+                <p className='secondSectionInputNameL'>{props.sectionName}</p>
                 <input
                     id={props.id}
-                    className={status ? 'secondSectionInputT': 'secondSectionInputF'}
+                    className={status ? 'secondSectionInputTL': 'secondSectionInputFl'}
                     name={props.name}
                     style={{ backgroundImage: `url(${LoadImages(props.icon)})` }}
                     type={isPass ? 'password' : 'text'}
+                    autoComplete='off'
                     >
                 </input>
             </div>
@@ -28,11 +41,11 @@ export default function Section2() {
             username: event.target.elements.first.value,
             password: event.target.elements.second.value
         })
-        const hostName=window.location.hostname; 
+        const hostName = window.location.hostname; 
 
         const fetchData = async () => {
             try{
-                await fetch('https://'+hostName+'/api/token/', {
+                await fetch('https://dku-web.vercel.app/api/token/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: rawData
@@ -46,10 +59,10 @@ export default function Section2() {
                     }
                 })
                 .then((responseData) => {
-                    var refreshToken = jwt_decode(responseData.refresh)
-                    var accessToken = jwt_decode(responseData.refresh)
-                    localStorage.setItem('id', JSON.stringify(refreshToken))
-                    console.log(refreshToken.user_id)
+                    //var refreshToken = jwt_decode(responseData.refresh)
+                    //var accessToken = jwt_decode(responseData.refresh)
+                    localStorage.setItem('id', JSON.stringify(responseData.refresh))
+                    navigate('/')
                 })
                 
         }catch (err) {
@@ -76,10 +89,10 @@ export default function Section2() {
     }
 
     return (
-        <section className='secondSection'>
-            <h1 className='secondSectionHeader'>Loginuj se</h1>
-            <article className='secondSectionIntro'>Pridruži nam se i postani volonter već danas...</article>
-            <form onSubmit={formSubmit} className='secondSectionForm'>
+        <section className='secondSectionL'>
+            <h1 className='secondSectionHeaderL'>Loginuj se</h1>
+            <article className='secondSectionIntroL'>Pridruži nam se i postani volonter već danas...</article>
+            <form onSubmit={formSubmit} className='secondSectionFormL'>
                 <InputField
                     id='first'
                     sectionName='Email adresa'
@@ -91,16 +104,17 @@ export default function Section2() {
                     icon={2}
                     name='pass' />
                     {status ? <></> : <p 
-                    className='secondSectionInputFail'>
+                    className='secondSectionInputFailL'>
                     *Login podaci netačni ili nepotpuni</p>}
-                <label className='secondSectionLabel'>
-                    <input type='checkbox' className='secondSectionPassKeep' />
+                <label className='secondSectionLabelL'>
+                    <input type='checkbox' className='secondSectionPassKeepL' />
                     Spremi zaporuku
                 </label>
-                <button className='secondSectionRegisterButton'>Loginuj se</button>
+                <div className='formButtonContainerL'>
+                    <button className='secondSectionRegisterButtonL'>Loginuj se</button>
+                    <button className='secondSectionGoogleButtonL'>Prijava pomoću Google računa</button>
+                </div>
             </form>
-            <button className='secondSectionGoogleButton'>Prijava pomoću Google računa</button>
-            <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
         </section>
     )
 }
