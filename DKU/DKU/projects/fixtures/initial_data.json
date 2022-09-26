@@ -1,6 +1,6 @@
 [
   {
-    "model": "register.ProjectCategory",
+    "model": "project.ProjectCategory",
     "pk": 1,
     "fields": {
       "name": "Indirektno"
@@ -8,7 +8,7 @@
   },
 
   {
-    "model": "register.ProjectCategory",
+    "model": "project.ProjectCategory",
     "pk": 2,
     "fields": {
       "name": "Direktno"
@@ -16,7 +16,7 @@
   },
 
   {
-    "model": "register.ProjectCategory",
+    "model": "project.ProjectCategory",
     "pk": 3,
     "fields": {
       "name": "Istrazivanje"
@@ -24,7 +24,7 @@
   },
 
   {
-    "model": "register.ProjectCategory",
+    "model": "project.ProjectCategory",
     "pk": 4,
     "fields": {
       "name": "Zagovaranje"
