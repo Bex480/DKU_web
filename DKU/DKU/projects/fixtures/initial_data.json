@@ -1,0 +1,33 @@
+[
+  {
+    "model": "DKU.models.ProjectCategory",
+    "pk": 1,
+    "fields": {
+      "name": "Indirektno"
+    }
+  },
+
+  {
+    "model": "DKU.models.ProjectCategory",
+    "pk": 2,
+    "fields": {
+      "name": "Direktno"
+    }
+  },
+
+  {
+    "model": "DKU.models.ProjectCategory",
+    "pk": 3,
+    "fields": {
+      "name": "Istrazivanje"
+    }
+  },
+
+  {
+    "model": "DKU.models.ProjectCategory",
+    "pk": 4,
+    "fields": {
+      "name": "Zagovaranje"
+    }
+  }
+]
