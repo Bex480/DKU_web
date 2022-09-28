@@ -20,7 +20,7 @@ class ListProjects(ListAPIView):
 
     def get_queryset(self):
         c_status = self.kwargs['current_status']
-        serializer = self.get_serializer(Project.objects.filter(current_status=c_status))
+        serializer = self.get_serializer(Project.objects.filter(current_status=c_status).data)
         return serializer
 
     def get(self, request, *args, **kwargs):
