@@ -11,6 +11,6 @@ urlpatterns = [
     path('projekti', TemplateView.as_view(template_name='index.html')),
     path('api/', include('api.urls')),
     path('register/', include('register.urls')),
-    path('projects/', include('project.urls'))
+    path('projects/', include('projects.urls'))
 ]
 
