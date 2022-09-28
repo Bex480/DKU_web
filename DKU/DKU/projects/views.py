@@ -1,7 +1,8 @@
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import CreateAPIView
-from .serializers import ProjectSerializer
+from rest_framework.generics import CreateAPIView, ListAPIView
+from .serializers import ProjectSerializer, ListSerializer
+from .models import Project
 
 
 class CreateProject(CreateAPIView):
@@ -12,4 +13,13 @@ class CreateProject(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         return Response(status=status.HTTP_201_CREATED)
+
+
+class ListProjects(ListAPIView):
+    serializer_class = ListSerializer
+
+    def get_queryset(self):
+        current_status = self.kwargs['current_status']
+        return Project.objects.filter(current_status=True)
+
 

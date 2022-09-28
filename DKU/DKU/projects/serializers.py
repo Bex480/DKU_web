@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from .models import Project, ProjectCategory
-from django.contrib.auth.models import User
+from .models import Project
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -24,3 +23,21 @@ class ProjectSerializer(serializers.ModelSerializer):
         project = Project(**validated_data)
         project.save()
         return project
+
+
+class ListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Project
+        fields = [
+            'title',
+            'description',
+            'max',
+            'begins',
+            'ends',
+            'leader',
+            'supervisor',
+        ]
+
+    def list(self):
+        return self
