@@ -15,8 +15,8 @@ class ProjectSerializer(serializers.ModelSerializer):
             'planned',
             'active',
             'archived',
-            'leader_id',
-            'supervisor_id',
+            'leader',
+            'supervisor',
         ]
 
     def create(self, validated_data):
