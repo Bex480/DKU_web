@@ -16,7 +16,4 @@ class Project(models.Model):
     volunteers = models.ManyToManyField(User)
     begins = models.DateTimeField()
     ends = models.DateTimeField()
-    planned = models.BooleanField()
-    active = models.BooleanField()
-    archived = models.BooleanField()
-    
+    current_status = models.CharField(max_length=30)

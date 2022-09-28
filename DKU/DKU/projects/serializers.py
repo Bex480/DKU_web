@@ -12,9 +12,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             'max',
             'begins',
             'ends',
-            'planned',
-            'active',
-            'archived',
+            'current_status',
             'leader',
             'supervisor',
         ]
