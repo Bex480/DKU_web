@@ -21,13 +21,6 @@ class ProjectSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        # leader = User(id=validated_data.pop('leader'))
-        # supervisor = User(id=validated_data.pop('supervisor'))
-        # leader.save()
-        # supervisor.save()
-
         project = Project(**validated_data)
-        # project.leader = leader
-        # project.supervisor = supervisor
         project.save()
         return project
