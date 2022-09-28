@@ -7,7 +7,7 @@ from .serializers import RegisterSerializer
 class Register(CreateAPIView):
     serializer_class = RegisterSerializer
 
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)

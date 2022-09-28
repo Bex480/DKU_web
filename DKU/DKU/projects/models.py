@@ -19,3 +19,4 @@ class Project(models.Model):
     planned = models.BooleanField()
     active = models.BooleanField()
     archived = models.BooleanField()
+    
