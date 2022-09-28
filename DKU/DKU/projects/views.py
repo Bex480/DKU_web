@@ -23,5 +23,5 @@ class ListProjects(ListAPIView):
         return Project.objects.filter(current_status=c_status)
 
     def get(self, request, *args, **kwargs):
-        queryset = self.get_serializer(self.get_queryset())
+        queryset = self.get_serializer(self.get_queryset().data)
         return Response(queryset)
