@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import CreateAPIView, ListAPIView
 from .serializers import ProjectSerializer, ListSerializer
+from django.core import serializers
 from .models import Project
 
 
@@ -20,7 +21,7 @@ class ListProjects(ListAPIView):
 
     def get_queryset(self):
         c_status = self.kwargs['current_status']
-        serializer = self.get_serializer(Project.objects.filter(current_status=c_status).data)
+        serializer = serializers.serialize('json', Project.objects.filter(current_status=c_status))
         return serializer
 
     def get(self, request, *args, **kwargs):
