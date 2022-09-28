@@ -99,7 +99,7 @@ export default function Polje2() {
 
     let isPass = 0;
 
-    function LoadImages(id) {
+    async function LoadImages(id) {
         switch (id) {
             case 1:
                 isPass = 0;

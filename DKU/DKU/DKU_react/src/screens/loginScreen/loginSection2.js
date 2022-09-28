@@ -74,11 +74,12 @@ export default function Section2() {
 
     let isPass = 0;
 
-    function LoadImages(id) {
+    async function LoadImages(id) {
+
         switch (id) {
             case 1:
                 isPass = 0;
-                return require('./loginAssets/UserIcon.png');
+                return  require('./loginAssets/UserIcon.png');
             case 2:
                 isPass = 1;
                 return require('./loginAssets/LockIcon.png');
@@ -95,7 +96,7 @@ export default function Section2() {
             <form onSubmit={formSubmit} className='secondSectionFormL'>
                 <InputField
                     id='first'
-                    sectionName='Email adresa'
+                    sectionName='Username'
                     icon={1}
                     name='email' />
                 <InputField

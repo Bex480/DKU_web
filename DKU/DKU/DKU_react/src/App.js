@@ -33,6 +33,12 @@ function App() {
         <Link to="/projekti">
           <button className='navigationButton'>Projekti</button>  
         </Link>
+        <Link to="/korisnik">
+          <button className='navigationButton'>Korisnik</button>  
+        </Link>
+        <Link to="/projektiLista">
+          <button className='navigationButton'>Projekti Lista</button>  
+        </Link>
       </section>
     </div>
   );
