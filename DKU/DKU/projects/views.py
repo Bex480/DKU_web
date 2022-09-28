@@ -19,8 +19,8 @@ class ListProjects(ListAPIView):
     serializer_class = ListSerializer
 
     def get_queryset(self):
-        current_status = self.kwargs['current_status']
-        return Project.objects.filter(current_status)
+        c_status = self.kwargs['current_status']
+        return Project.objects.filter(current_status=c_status)
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
