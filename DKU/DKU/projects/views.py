@@ -22,4 +22,6 @@ class ListProjects(ListAPIView):
         current_status = self.kwargs['current_status']
         return Project.objects.filter(current_status=True)
 
-
+    def get(self):
+        queryset = self.get_queryset()
+        return Response(queryset)
