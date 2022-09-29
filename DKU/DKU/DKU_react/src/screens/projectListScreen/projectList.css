@@ -124,3 +124,66 @@
     box-shadow: 0 4px lightgrey;
     transform: translateY(4px);
 }
+
+.listContainer{
+    display: flex;
+    flex-flow: row;
+    width: 100vw;
+    margin: 15vh 0 0 0;
+    overflow: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+.listContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.projectContainer{
+    display: flex;
+    flex-flow: column;
+    margin: 0 1vw 0 1vw;
+    height: 60vh;
+    width: 25vw;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.projectListPicture{
+    height: 30vh;
+    width: 25vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dateTime{
+    font-size: 1vw;
+    color: grey;
+    margin: 1.5vh 0 0 2vw;
+}
+
+.projectName{
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1vh 0 0 2vw;
+}
+
+.projectDesc{
+    width: 20vw;
+    margin: 1vh 0 0 2vw;
+    font-size: 1.1vw;
+    color: rgb(101, 100, 100);
+}
+
+.vidiDetalje{
+    position: relative;
+    height: 1vh;
+    width: 9vw;
+    top: 10vh;
+    left: 2vw;
+    font-size: 1.3vw;
+    color: rgb(38, 98, 218);
+    text-decoration: none;
+    cursor: pointer;
+}

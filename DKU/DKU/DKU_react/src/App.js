@@ -1,6 +1,6 @@
 import './App.css';
 import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
 
@@ -35,9 +35,6 @@ function App() {
         </Link>
         <Link to="/korisnik">
           <button className='navigationButton'>Korisnik</button>  
-        </Link>
-        <Link to="/projektiLista">
-          <button className='navigationButton'>Projekti Lista</button>  
         </Link>
       </section>
     </div>

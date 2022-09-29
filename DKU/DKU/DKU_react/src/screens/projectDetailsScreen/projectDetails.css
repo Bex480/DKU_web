@@ -1,4 +1,4 @@
-.mainContainerUser{
+.mainContainerD{
     text-align: center;
     height: 100%;
     width: 100%;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.mainSectionUser{
+.mainSectionD{
     background-color: white;
     width: 59.9%;
     height: 90%;
@@ -17,12 +17,12 @@
     padding: 0 0 0 0;
 }
 
-.upperSection{
+.upperSectionD{
     display: flex;
     flex-flow: row;
 }
 
-.userImage{
+.projectImageD{
     margin: 5vh 0 0 5vw; 
     border: 3px solid wheat;
     border-radius: 30px;
@@ -30,12 +30,12 @@
     width: 18vw;
 }
 
-.changeUserImage{
+.changeProjectImageD{
     margin: 3vh 0 0 6vw; 
     height: 3vh;
 }
 
-.imageContainer{
+.imageContainerD{
     display: flex;
     flex-flow: column;
     height: 45vh;
@@ -43,22 +43,22 @@
     margin: 0;
 }
 
-.nameInfo{
-    margin: 3vh 0 0 2vw;
+.nameInfoD{
+    margin: 2vh 0 0 2vw;
 }
 
-.nameInfo p{
+.nameInfoD p{
     font-size: 1.8vw;
     text-decoration: underline;
     text-align: left;
 }
 
-.lowerSection{
+.lowerSectionD{
     display: flex;
     flex-flow: row;
 }
 
-.projectsOverhead{
+.descriptionOverheadD{
     font-size: 1.7vw;
     margin: 0 0 0 5vw;
 }
