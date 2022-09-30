@@ -5,27 +5,51 @@ export default function ProjectDetails () {
 
     const location = useLocation();
 
+    const TextDescription = function (props) {
+        return(
+            <div className='dateContainerPD'>
+                    <p className='datePD'>{props.name}</p>
+                    <p >{props.text}</p>
+            </div>
+        )
+    }
+
     return(
-        <div className='mainContainerD'>
-            <section className='mainSectionD'>
-                <section className='upperSectionD'>
-                    <div className='imageContainerD'>
-                        <img className='projectImageD'
-                            src={require('./projectDetailsAssets/TempPic.png')}
-                            alt='Not found'></img>
-                        <input type='file' className='changeProjectImageD'></input>
+        <div className='mainContainerPD'>
+            <section className='containerPD'>
+                <h1 className='headerPD'>{location.state.title}</h1>
+                <TextDescription
+                    name = 'Period trajanja projekta:'
+                    text = {location.state.date}
+                />
+                <TextDescription
+                    name = 'Vrijeme pripreme i realizacija projekta:'
+                    text = 'PLACEHOLDER'
+                />
+                <TextDescription
+                    name = 'Broj učenika:'
+                    text = {location.state.max_volunteers}
+                />
+                <article className='buttonContainerPD'>
+                Oblik društveno-korisnog učenja:
+                    <div className='buttonContainerPD2'>
+                        <button style={{color: 'black', fontWeight: 'bold'}}>Direktno</button>
+                        <button style={{color: 'grey', fontWeight: 'bold'}}>Indirektno</button>
+                        <button style={{color: 'lightblue', fontWeight: 'bold'}}>Istraživanje</button>
+                        <button style={{color: 'gold', fontWeight: 'bold'}}>Zagovaranje</button>
                     </div>
-                        <article className='nameInfoD'>
-                            <p>Title: </p>
-                            <p>Leader:</p>
-                            <p>Supervisor:</p>
-                            <p>Begins - Ends:</p>
-                            <p>Current Status:</p>
-                        </article>
-                </section>
-                <section className='lowerSectionD'>
-                    <p className='descriptionOverheadD'>Description:</p>
-                </section>
+                </article>
+                <div className='projectGoalPD'>
+                    <p className='datePD'>Cilj projekta:</p>
+                    <div className='projectGoalTextArea'>
+                        {location.state.description}
+                    </div>
+                </div>
+                <div className='finalContainerPD'>
+                    <p className='datePD'>Projekat se realizuje na:</p>
+                    <p >Nivou škole</p>
+                </div>
+                <button className='finalButtonPD'>Pridruži se </button>
             </section>
         </div>
     )

@@ -40,11 +40,13 @@ export default function MainSection () {
    
 
     const projects = projectData[0] == null ? 'hello' :projectData.map((project) => {
+        console.log(project)
         return <ProjectCard 
             key = {project.pk}
             title = {project.fields.title}
             description = {project.fields.description}
             begins = {project.fields.begins} 
+            max_volunteers = {project.fields.max}
         />
     }) 
 
