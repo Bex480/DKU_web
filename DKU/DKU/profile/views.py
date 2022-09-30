@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.generics import RetrieveAPIView
 from django.core import serializers
 from django.contrib.auth.models import User
-from serializers import ProfileSerializer
+from .serializers import ProfileSerializer
 
 
 class GetUser(RetrieveAPIView):
