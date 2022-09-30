@@ -10,5 +10,4 @@ class GetUser(RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         serializer = ProfileSerializer(request.user).data
-        serializer.is_valid(raise_exception=True)
         return Response(serializer)
