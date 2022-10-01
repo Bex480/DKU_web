@@ -36,7 +36,7 @@ class AddVolunteer(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        project.volunteers.add(request.user)
+        project.volunteers.add(request.user.id)
         serializer = self.get_serializer(project)
         return Response(serializer)
 
