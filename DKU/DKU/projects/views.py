@@ -1,9 +1,10 @@
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import CreateAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView
 from .serializers import ProjectSerializer, ListSerializer
 from django.core import serializers
-from .models import Project
+from .models import Project, ProjectCategory
+from django.contrib.auth.models import User
 
 
 class CreateProject(CreateAPIView):
@@ -27,3 +28,20 @@ class ListProjects(ListAPIView):
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         return Response(queryset)
+
+
+class AddVolunteer(UpdateAPIView):
+
+    def patch(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        project = Project(id=pk)
+        return project.volunteers.add(request.user)
+
+
+class AddCategory(UpdateAPIView):
+
+    def patch(self, request, *args, **kwargs):
+        category = ProjectCategory.objects.filter(name=request.data)
+        pk = self.kwargs['pk']
+        project = Project(id=pk)
+        return project.category.add(category)
