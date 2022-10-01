@@ -35,7 +35,7 @@ class AddVolunteer(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        return project.volunteers.add(request.user)
+        return project.volunteers.add(request.user.id)
 
 
 class AddCategory(UpdateAPIView):
