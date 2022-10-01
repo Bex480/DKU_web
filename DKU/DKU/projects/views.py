@@ -37,8 +37,7 @@ class AddVolunteer(UpdateAPIView):
         pk = self.kwargs['pk']
         project = Project(id=pk)
         project.volunteers.add(request.user.id)
-        serializer = self.get_serializer(project.data)
-        return Response(serializer)
+        return Response(status=status.HTTP_200_OK)
 
 
 class AddCategory(UpdateAPIView):
@@ -49,5 +48,4 @@ class AddCategory(UpdateAPIView):
         pk = self.kwargs['pk']
         project = Project(id=pk)
         project.category.add(category.id)
-        serializer = self.get_serializer(project.data)
-        return Response(serializer)
+        return Response(status=status.HTTP_200_OK)
