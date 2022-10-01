@@ -48,6 +48,6 @@ class AddCategory(UpdateAPIView):
         category = ProjectCategory.objects.filter(name=request.data)
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        project.category.add(category)
-        serializer = self.get_serializer(project)
+        project.category.add(category.id)
+        serializer = self.get_serializer(project.data)
         return Response(serializer)
