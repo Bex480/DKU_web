@@ -37,7 +37,7 @@ class AddVolunteer(UpdateAPIView):
         pk = self.kwargs['pk']
         project = Project(id=pk)
         project.volunteers.add(request.user.id)
-        serializer = self.get_serializer(project)
+        serializer = self.get_serializer(project.data)
         return Response(serializer)
 
 
