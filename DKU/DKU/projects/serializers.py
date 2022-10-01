@@ -27,15 +27,4 @@ class ListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = [
-            'title',
-            'description',
-            'max',
-            'begins',
-            'ends',
-            'leader',
-            'supervisor',
-        ]
-
-    def list(self):
-        return self
+        fields = '__all__'

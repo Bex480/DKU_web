@@ -31,17 +31,23 @@ class ListProjects(ListAPIView):
 
 
 class AddVolunteer(UpdateAPIView):
+    serializer_class = ListSerializer
 
     def patch(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        return project.volunteers.add(request.user.id)
+        project.volunteers.add(request.user)
+        serializer = self.get_serializer(project)
+        return Response(serializer)
 
 
 class AddCategory(UpdateAPIView):
+    serializer_class = ListSerializer
 
     def patch(self, request, *args, **kwargs):
         category = ProjectCategory.objects.filter(name=request.data)
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        return project.category.add(category)
+        project.category.add(category)
+        serializer = self.get_serializer(project)
+        return Response(serializer)
