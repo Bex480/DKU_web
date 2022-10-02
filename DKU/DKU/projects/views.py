@@ -41,7 +41,7 @@ class AddVolunteer(UpdateAPIView):
 
 
 class AddCategory(UpdateAPIView):
-    serializer_class = Ca
+    serializer_class = CategorySerializer
 
     def patch(self, request, *args, **kwargs):
         category = CategorySerializer(request.data)
