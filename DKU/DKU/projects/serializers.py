@@ -35,6 +35,3 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectCategory
         fields = '__all__'
-
-    def get(self, validated_data):
-        category = ProjectCategory.objects.get(name=)
