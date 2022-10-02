@@ -47,5 +47,5 @@ class AddCategory(UpdateAPIView):
         category = ProjectCategory.objects.filter(name=request.data)
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        project.category.add(category.id)
+        project.category.add(category)
         return Response(status=status.HTTP_200_OK)
