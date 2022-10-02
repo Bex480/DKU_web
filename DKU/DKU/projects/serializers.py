@@ -29,16 +29,3 @@ class ListSerializer(serializers.ModelSerializer):
         model = Project
         fields = '__all__'
 
-
-class CategorySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = ProjectCategory
-        fields = '__all__'
-
-    def adding(self, validated_data):
-        category = []
-        for item in validated_data['name']:
-            category.append(ProjectCategory.objects.get(id=item))
-
-        return category
