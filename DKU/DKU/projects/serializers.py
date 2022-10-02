@@ -39,6 +39,6 @@ class CategorySerializer(serializers.ModelSerializer):
     def adding(self, validated_data):
         category = []
         for item in validated_data['name']:
-            category.append(ProjectCategory.objects.get(name=item))
+            category.append(ProjectCategory.objects.get(id=item))
 
         return category
