@@ -49,5 +49,5 @@ class AddCategory(UpdateAPIView):
         pk = self.kwargs['pk']
         project = Project(id=pk)
         for item in serializer:
-            project.category.add(item.id)
+            project.category.add(item)
         return Response(status=status.HTTP_200_OK)
