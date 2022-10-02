@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Project
+from .models import Project, ProjectCategory
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -28,3 +28,17 @@ class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = '__all__'
+
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ProjectCategory
+        fields = '__all__'
+
+    def adding(self, validated_data):
+        category = []
+        for item in validated_data['name']:
+            category.append(ProjectCategory.objects.get(name=item))
+
+        return category

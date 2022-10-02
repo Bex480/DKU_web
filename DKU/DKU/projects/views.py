@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView
-from .serializers import ProjectSerializer, ListSerializer
+from .serializers import ProjectSerializer, ListSerializer, CategorySerializer
 from django.core import serializers
 from .models import Project, ProjectCategory
 from django.contrib.auth.models import User
@@ -41,12 +41,13 @@ class AddVolunteer(UpdateAPIView):
 
 
 class AddCategory(UpdateAPIView):
-    serializer_class = ListSerializer
+    serializer_class = CategorySerializer
 
     def patch(self, request, *args, **kwargs):
-        category = ProjectCategory.objects.filter(name=request.data)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        for item in category:
+        for item in serializer:
             project.category.add(item.id)
         return Response(status=status.HTTP_200_OK)
