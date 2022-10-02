@@ -29,3 +29,9 @@ class ListSerializer(serializers.ModelSerializer):
         model = Project
         fields = '__all__'
 
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ProjectCategory
+        fields = '__all__'
