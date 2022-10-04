@@ -14,7 +14,7 @@
   background-color: lightblue;
   width: 10vw;
   height: 5vh;
-  margin-right: 5vw;
+  overflow: hidden;
 }
 
 .navigationButton:hover{
@@ -25,4 +25,8 @@
   background-color: lightblue;
   box-shadow: 0 4px lightgrey;
   transform: translateY(4px);
+}
+
+.navigationAnchor{
+  margin-right: 5vw;
 }

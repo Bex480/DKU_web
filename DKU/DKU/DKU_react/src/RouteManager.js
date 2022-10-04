@@ -14,10 +14,39 @@ import UserScreen from "./screens/userScreen/userScreen";
 import ProjectDetails from "./screens/projectDetailsScreen/projectDetails";
 
 export default function RouteManager () {
-
     const [userData, changeUserData] = useState({
-        host: window.location.hostname
+        host: window.location.hostname,
+        access: null
     })
+    const id = localStorage.getItem('id')
+
+    setInterval(() => {  
+       /* const fetchData = async () => {
+            try{
+                await fetch('https://dku-web.vercel.app/api/token/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: localStorage.getItem('id')
+                })
+                .then((response) => {
+                    if(response.ok) {
+                        return response.json()
+                    }
+                    else {
+                        throw response
+                    }
+                })
+                .then((responseData) => {
+                    changeUserData({
+                        ...userData,
+                        access: responseData.access
+                    })
+                })      
+            }catch (err) {
+                console.error(err)
+            }}
+            fetchData() */
+    }, 720000); 
 
     return(
     <BrowserRouter>

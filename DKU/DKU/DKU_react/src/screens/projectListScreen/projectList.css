@@ -113,13 +113,30 @@
     font-size: 1.5vw;
     height: 10vh;
     width: 20vw;
-}
-
-.mainSectionButton:hover{
     cursor: pointer;
 }
 
 .mainSectionButton:active{
+    background-color: white;
+    box-shadow: 0 4px lightgrey;
+    transform: translateY(4px);
+}
+
+.mainSectionButton2{
+    top: 20vh;
+    right: 5vw;
+    position: absolute;
+    border-radius: 15px;
+    border: 3px solid orange;
+    color: orange;
+    background-color: white;
+    font-size: 1.3vw;
+    height: 7vh;
+    width: 15vw;
+    cursor: pointer;
+}
+
+.mainSectionButton2:active{
     background-color: white;
     box-shadow: 0 4px lightgrey;
     transform: translateY(4px);
@@ -170,17 +187,35 @@
 }
 
 .projectDesc{
-    width: 20vw;
+    width: 20.6vw;
+    height: 13vh;
     margin: 1vh 0 0 2vw;
     font-size: 1.1vw;
     color: rgb(101, 100, 100);
+    padding-right: 0.5vw;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.projectDesc::-webkit-scrollbar {
+    width: 0.5vw
+}
+
+.projectDesc::-webkit-scrollbar-track {
+    box-shadow: white; 
+    border-radius: 10px;
+}
+
+.projectDesc::-webkit-scrollbar-thumb {
+    background: darkgrey; 
+    border-radius: 10px;
 }
 
 .vidiDetalje{
     position: relative;
     height: 1vh;
-    width: 9vw;
-    top: 10vh;
+    width: 10vw;
     left: 2vw;
     font-size: 1.3vw;
     color: rgb(38, 98, 218);

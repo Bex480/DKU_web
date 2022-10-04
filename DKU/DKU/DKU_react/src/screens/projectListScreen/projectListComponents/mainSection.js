@@ -39,7 +39,7 @@ export default function MainSection () {
 
    
 
-    const projects = projectData[0] == null ? 'hello' :projectData.map((project) => {
+    const projects = projectData[0] == null ? 'Failed to load projects' :projectData.map((project) => {
         console.log(project)
         return <ProjectCard 
             key = {project.pk}
@@ -68,9 +68,12 @@ export default function MainSection () {
                 <button className='mainSectionButton' onClick={() => createProject()}>DODAJ PROJEKAT</button>
             </>
             :
-            <div className='listContainer'>
+            <>
+             <button className='mainSectionButton2' onClick={() => createProject()}>DODAJ PROJEKAT</button>
+             <div className='listContainer'>
                 {projects}
-            </div>
+                </div>
+            </>
             }
         </section>
     )
