@@ -16,10 +16,11 @@ class GetUser(RetrieveAPIView):
 
 
 class GetSupervisors(ListAPIView):
+    serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        serializer = serializers.serialize('json', User.objects.filter(is_staff=True))
+        serializer = ProfileSerializer(User.objects.filter(is_staff=True))
         return serializer
 
     def get(self, request, *args, **kwargs):
