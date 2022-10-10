@@ -45,7 +45,6 @@ class AddCategory(UpdateAPIView):
 
     def patch(self, request, *args, **kwargs):
         category = ProjectCategory.objects.get(name=request.data)
-        print(request.data)
         pk = self.kwargs['pk']
         project = Project(id=pk)
         project.category.add(category.id)
