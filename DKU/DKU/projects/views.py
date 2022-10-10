@@ -3,12 +3,14 @@ from rest_framework.response import Response
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView
 from .serializers import ProjectSerializer, ListSerializer, CategorySerializer
 from django.core import serializers
+from rest_framework.permissions import IsAuthenticated
 from .models import Project, ProjectCategory
 from django.contrib.auth.models import User
 
 
 class CreateProject(CreateAPIView):
     serializer_class = ProjectSerializer
+    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
