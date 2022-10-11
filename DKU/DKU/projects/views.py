@@ -46,7 +46,7 @@ class AddCategory(UpdateAPIView):
     serializer_class = CategorySerializer
 
     def patch(self, request, *args, **kwargs):
-        category = CategorySerializer(ProjectCategory.objects.filter(name=request.data.name), many=True)
+        category = CategorySerializer(ProjectCategory.objects.filter(name=request.data['name']), many=True)
         pk = self.kwargs['pk']
         project = Project(id=pk)
         project.category.add(category.id)
