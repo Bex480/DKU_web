@@ -44,10 +44,14 @@ class AddVolunteer(UpdateAPIView):
 
 class AddCategory(UpdateAPIView):
     serializer_class = CategorySerializer
+    lookup_field = 'name'
 
     def patch(self, request, *args, **kwargs):
-        category = CategorySerializer(ProjectCategory.objects.filter(name=request.data['name']), many=True)
+        categories = []
+        for item in request.data['name']:
+            categories.append(CategorySerializer(ProjectCategory.objects.get(name=item)))
         pk = self.kwargs['pk']
         project = Project(id=pk)
-        project.category.add(category.data.id)
+        for item in categories:
+            project.category.add(item.data['id'])
         return Response(status=status.HTTP_200_OK)
