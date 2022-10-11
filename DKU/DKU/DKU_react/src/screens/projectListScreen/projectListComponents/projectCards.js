@@ -13,7 +13,7 @@ export default function ProjectCard (props) {
                 alt='Does not exist'/>
             <p className='dateTime'>{date1}</p>
             <p className='projectName'>{props.title}</p>
-            <textarea className='projectDesc'>{props.description}</textarea>
+            <textarea className='projectDesc' readOnly='true'>{props.description}</textarea>
             <p onClick={() => {
                 navigate('/projektDetalji', {state: {
                     title: props.title,

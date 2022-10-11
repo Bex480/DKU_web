@@ -18,15 +18,17 @@ export default function RouteManager () {
         host: window.location.hostname,
         access: null
     })
-    const id = localStorage.getItem('id')
 
     setInterval(() => {  
-       /* const fetchData = async () => {
+        console.log(localStorage.getItem('id'))
+        const fetchData = async () => {
             try{
-                await fetch('https://dku-web.vercel.app/api/token/', {
+                await fetch('https://dku-web.vercel.app/api/token/refresh/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
-                    body: localStorage.getItem('id')
+                    body: JSON.stringify({
+                        refresh: `${localStorage.getItem('id')}`
+                    })
                 })
                 .then((response) => {
                     if(response.ok) {
@@ -37,6 +39,7 @@ export default function RouteManager () {
                     }
                 })
                 .then((responseData) => {
+                    console.log(responseData)
                     changeUserData({
                         ...userData,
                         access: responseData.access
@@ -45,8 +48,8 @@ export default function RouteManager () {
             }catch (err) {
                 console.error(err)
             }}
-            fetchData() */
-    }, 720000); 
+            fetchData() 
+    },76775000); 
 
     return(
     <BrowserRouter>

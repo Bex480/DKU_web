@@ -33,10 +33,16 @@
    margin-right: 1vw;
 }
 
+.classesPD{
+    text-align: left;
+    margin-left: 1.5vw;
+    font-weight: bold;
+}
+
 .buttonContainerPD{
     display: flex;
     flex-flow: column;
-    margin: 10vh 30vw 0 0;
+    margin: 10vh 0 0 0;
     font-weight: bold;
     font-size: 110%;
 }
@@ -64,13 +70,15 @@
 }
 
 .projectGoalTextArea{
-    padding: 1vh;
+    padding-top: 1vh;
     width: 45vw;
     height: 15vh;
     margin: 0 0 0 1.9vw;
     border: 1px solid black;
     resize: none;
     text-align: left;
+    outline: none;
+    border: none;
 }
 
 .finalContainerPD{

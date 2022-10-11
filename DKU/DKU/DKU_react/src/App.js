@@ -27,7 +27,9 @@ function App() {
             <button className='navigationButton'>Login</button>
           </Link>
           :
-          <button className='navigationButton' onClick={() => deleteId()}>Logout</button>
+          <Link className='navigationAnchor' to="" >
+            <button className='navigationButton' onClick={() => deleteId()}>Logout</button>
+          </Link>
         }
         <Link className='navigationAnchor' to="/projekti">
           <button className='navigationButton'>Projekti</button>  

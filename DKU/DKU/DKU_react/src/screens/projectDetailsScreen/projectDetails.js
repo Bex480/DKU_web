@@ -31,7 +31,7 @@ export default function ProjectDetails () {
                     text = {location.state.max_volunteers}
                 />
                 <article className='buttonContainerPD'>
-                Oblik društveno-korisnog učenja:
+                <p className='classesPD'>Oblik društveno-korisnog učenja:</p>
                     <div className='buttonContainerPD2'>
                         <button style={{color: 'black', fontWeight: 'bold'}}>Direktno</button>
                         <button style={{color: 'grey', fontWeight: 'bold'}}>Indirektno</button>
@@ -41,9 +41,9 @@ export default function ProjectDetails () {
                 </article>
                 <div className='projectGoalPD'>
                     <p className='datePD'>Cilj projekta:</p>
-                    <div className='projectGoalTextArea'>
+                    <textarea className='projectGoalTextArea' readOnly='true'>
                         {location.state.description}
-                    </div>
+                    </textarea>
                 </div>
                 <div className='finalContainerPD'>
                     <p className='datePD'>Projekat se realizuje na:</p>
