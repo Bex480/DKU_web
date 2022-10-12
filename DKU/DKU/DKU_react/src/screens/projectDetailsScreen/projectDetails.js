@@ -41,7 +41,7 @@ export default function ProjectDetails () {
                 </article>
                 <div className='projectGoalPD'>
                     <p className='datePD'>Cilj projekta:</p>
-                    <textarea className='projectGoalTextArea' readOnly='true'>
+                    <textarea className='projectGoalTextArea' readOnly={true}>
                         {location.state.description}
                     </textarea>
                 </div>

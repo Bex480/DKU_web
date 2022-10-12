@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../projectList.css'
 import ProjectCard from './projectCards'
 
 export default function MainSection () {
 
     const [projectData, changeProjectData] = useState([null])
-    var projectsParsed = null
 
     useEffect(() => {
         getProjects();
@@ -40,7 +40,6 @@ export default function MainSection () {
    
 
     const projects = projectData[0] == null ? 'Failed to load projects' :projectData.map((project) => {
-        console.log(project)
         return <ProjectCard 
             key = {project.pk}
             title = {project.fields.title}
@@ -49,11 +48,7 @@ export default function MainSection () {
             max_volunteers = {project.fields.max}
         />
     }) 
-
-    function createProject(){
-        console.log(projectData[0])
-    }
-
+    
     return(
         <section className='mainSectionContainer'>
             {projectData[0] == null ?
@@ -65,12 +60,16 @@ export default function MainSection () {
                 <img className='mainSectionImage'
                 src={require('../projectListAssets/noProjects.png')}
                 alt='Does not exist'></img>
-                <button className='mainSectionButton' onClick={() => createProject()}>DODAJ PROJEKAT</button>
+                <Link to="/dodajProjekat">
+                    <button className='mainSectionButton'>DODAJ PROJEKAT</button>
+                </Link>
             </>
             :
             <>
-             <button className='mainSectionButton2' onClick={() => createProject()}>DODAJ PROJEKAT</button>
-             <div className='listContainer'>
+            <Link to="/dodajProjekat">
+                <button className='mainSectionButton2'>DODAJ PROJEKAT</button>
+            </Link>
+            <div className='listContainer'>
                 {projects}
                 </div>
             </>

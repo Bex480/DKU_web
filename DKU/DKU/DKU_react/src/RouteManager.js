@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     BrowserRouter,
     Routes,
-    Route,
+    Route
 } from "react-router-dom";
 import App from "./App";
 import Contact from "./screens/contactScreen/contact";
@@ -12,44 +12,58 @@ import Register from "./screens/registerScreen/register";
 import { AccountContext } from "./userContext/userContext";
 import UserScreen from "./screens/userScreen/userScreen";
 import ProjectDetails from "./screens/projectDetailsScreen/projectDetails";
+import ProjectAdd from "./screens/addProjectScreen/addProject";
 
 export default function RouteManager () {
     const [userData, changeUserData] = useState({
         host: window.location.hostname,
-        access: null
+        access: null,
+        timer: null
     })
 
-    setInterval(() => {  
-        console.log(localStorage.getItem('id'))
-        const fetchData = async () => {
-            try{
-                await fetch('https://dku-web.vercel.app/api/token/refresh/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        refresh: `${localStorage.getItem('id')}`
-                    })
+    useEffect(() =>{
+        console.log('hello')
+        setInterval(tryIn,5000)
+    }, [])
+    var m=1;
+    function tryIn () {
+        sessionStorage.setItem('timer', '1')
+        fetchData()
+        console.log(m++)
+    }
+
+   ///PROBABLY NEED TO DECODE THIS ACCESS TOKEN LATER
+    const fetchData = async () => {
+        const tokenData = JSON.stringify({
+            refresh: localStorage.getItem('id') === null ? "" :localStorage.getItem('id').slice(1, -1)
+        })
+        try{
+            await fetch('https://dku-web.vercel.app/api/token/refresh/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: tokenData
+            })
+            .then((response) => {
+                console.log(tokenData)
+                if(response.ok) {
+                    return response.json()
+                }
+                else {
+                    throw response
+                }
+            })
+            .then((responseData) => {
+                //console.log(responseData)
+                console.log(responseData.refresh)
+                localStorage.setItem('id', JSON.stringify(responseData.refresh))
+                changeUserData({
+                    ...userData,
+                    access: responseData.access
                 })
-                .then((response) => {
-                    if(response.ok) {
-                        return response.json()
-                    }
-                    else {
-                        throw response
-                    }
-                })
-                .then((responseData) => {
-                    console.log(responseData)
-                    changeUserData({
-                        ...userData,
-                        access: responseData.access
-                    })
-                })      
-            }catch (err) {
-                console.error(err)
-            }}
-            fetchData() 
-    },76775000); 
+            })      
+        }catch (err) {
+            console.error(err)
+        }}
 
     return(
     <BrowserRouter>
@@ -62,6 +76,7 @@ export default function RouteManager () {
                 <Route path="projekti" element={<ProjectList />} />
                 <Route path="korisnik" element={<UserScreen />} />
                 <Route path="projektDetalji" element={<ProjectDetails />} />
+                <Route path="dodajProjekat" element={<ProjectAdd />} />
             </Routes>
         </AccountContext.Provider>
   </BrowserRouter>

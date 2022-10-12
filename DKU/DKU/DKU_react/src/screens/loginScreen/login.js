@@ -3,7 +3,7 @@ import Section1 from './loginSection1.js'
 import Section2 from './loginSection2.js'
 
 export default function Login() {
-    
+
     return(
         <div className='mainContainer'>
             <Section1 /> {/* Polje sa slikom i porukom */}

@@ -8,7 +8,7 @@ export default function Section2() {
 
     const [status, changeStatus] = useState(true)
     const navigate = useNavigate();
-    const userInfo = useContext(AccountContext)
+    const {userData, changeUserData} = useContext(AccountContext)
 
     useEffect(() => {
         if(localStorage.getItem('id') === null)
@@ -61,6 +61,10 @@ export default function Section2() {
                 .then((responseData) => {
                     //var refreshToken = jwt_decode(responseData.refresh)
                     //var accessToken = jwt_decode(responseData.refresh)
+                    changeUserData({
+                        ...userData,
+                        access: jwt_decode(responseData.access)
+                    })
                     localStorage.setItem('id', JSON.stringify(responseData.refresh))
                     navigate('/')
                 })

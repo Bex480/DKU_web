@@ -1,14 +1,18 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AccountContext } from '../../../userContext/userContext'
 import '../projectList.css'
 
 export default function MainHeader () {
 
     const {userData, changeUserData} = useContext(AccountContext)
+    const navigate = useNavigate();
 
     function NavigationOption (props) {
         return(
-            <a className='navigationOption' href='a'>
+            <a className='navigationOption' onClick={() => {
+                navigate('/')
+            }}>
                 {props.title}
             </a>
         )

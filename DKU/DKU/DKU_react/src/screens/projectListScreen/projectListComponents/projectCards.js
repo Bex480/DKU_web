@@ -5,7 +5,6 @@ export default function ProjectCard (props) {
 
     const navigate = useNavigate();
     var date1 = props.begins.slice(0, 10)+' '+props.begins.slice(11, 19)
-
     return(
         <div className='projectContainer'>
             <img className='projectListPicture'
@@ -13,7 +12,7 @@ export default function ProjectCard (props) {
                 alt='Does not exist'/>
             <p className='dateTime'>{date1}</p>
             <p className='projectName'>{props.title}</p>
-            <textarea className='projectDesc' readOnly='true'>{props.description}</textarea>
+            <textarea className='projectDesc' readOnly={true} value={props.description} />
             <p onClick={() => {
                 navigate('/projektDetalji', {state: {
                     title: props.title,

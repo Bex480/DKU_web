@@ -1,0 +1,14 @@
+.mainContainerAD{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainFormPD{
+
+    display: flex;
+    flex-flow: column;
+    border: 2px solid black;
+}
