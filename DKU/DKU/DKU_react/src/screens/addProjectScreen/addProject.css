@@ -1,0 +1,86 @@
+.mainContainerAD{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.formContainerAD{
+    height: 95vh;
+    width: 50vw;
+    background-color: #E2E0E0;
+    border: 5px solid grey;
+    border-style: double;
+}
+
+.centeringContainerAD{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainerAD h1{
+    font-size: calc(1vw + 1vh);
+    margin: 2vh 0 0 0;
+}
+
+.inputTitleAD{
+    height: 3vh;
+    width: 100%;
+    margin: 4vh 0 3vh 3vw;
+    font-size: calc(1vw + 1vh);
+    font-weight: bold;
+}
+
+.titleInputAD{
+    height: 4vh;
+    width: 45vw;
+    margin: 0 2.5vw 0 2.5vw;
+    padding-left: 1vw;
+    font-size: calc(1vw + 1vh);
+}
+
+.dateContainerAD{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+.inputBeginsAD{
+    height: 3vh;
+    width: 100%;
+    margin: 4vh 0 3vh 3vw;
+    font-size: calc(1vw + 1vh);
+    font-weight: bold;
+}
+
+.centeringContainerAD2{
+    width: 30%;
+}
+
+.beginsInputAD{
+    height: 4vh;
+    width: 20vw;
+    margin: 0 0 0 2.5vw;
+    padding-left: 1vw;
+    font-size: calc(1vw + 1vh);
+}
+
+.inputEndsAD{
+    height: 3vh;
+    width: 100%;
+    margin: 4vh 0 3vh 3vw;
+    font-size: calc(1vw + 1vh);
+    font-weight: bold;
+}
+
+.endsInputAD{
+    height: 4vh;
+    width: 20vw;
+    margin: 0 2.5vw 0 2.5vw;
+    padding-left: 1vw;
+    font-size: calc(1vw + 1vh);
+}

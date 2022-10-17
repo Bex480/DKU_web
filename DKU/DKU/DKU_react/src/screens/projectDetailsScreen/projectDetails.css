@@ -1,0 +1,106 @@
+.mainContainerPD{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerPD{
+    width: 50vw;
+    height: 90vh;
+    background-color: white;
+    border: 3px solid gold
+}
+
+.headerPD{
+    height: 1vh;
+    font-size: 175%;
+}
+
+.dateContainerPD{
+    display: flex;
+    flex-flow: row;
+    height: 1vh;
+    margin: 5vh 0 0 1.5vw;
+    font-size: 110%;
+}
+
+.datePD{
+   font-weight: bold;
+   margin-right: 1vw;
+}
+
+.classesPD{
+    text-align: left;
+    margin: 0 0 1vh 1.5vw;
+    font-weight: bold;
+}
+
+.buttonContainerPD{
+    display: flex;
+    flex-flow: column;
+    margin: 10vh 0 0 0;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.buttonContainerPD2{
+    display: flex;
+    flex-flow: row;
+    width: 50vw;
+}
+
+.buttonContainerPD button{
+    margin: 5vh 2.5vw -2.5vh 2.5vw;
+    height: 5vh;
+    width: 10vw;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.projectGoalPD{
+    display: flex;
+    flex-flow: column;
+    height: 40;
+    margin: 5vh 39vw 0 0;
+    font-size: 110%;
+}
+
+.projectGoalTextArea{
+    padding-top: 1vh;
+    width: 45vw;
+    height: 15vh;
+    margin: 0 0 0 1.9vw;
+    border: 1px solid black;
+    resize: none;
+    text-align: left;
+    outline: none;
+    border: none;
+}
+
+.finalContainerPD{
+    display: flex;
+    flex-flow: row;
+    height: 1vh;
+    margin: 2vh 0 0 1.5vw;
+    font-size: 110%;
+}
+
+.finalButtonPD{
+    margin: 9vh 2.5vw 0 2.5vw;
+    height: 5vh;
+    width: 10vw;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.finalButtonPD:active{
+    background-color: lightblue;
+    box-shadow: 0 4px lightgrey;
+    transform: translateY(4px);
+}
