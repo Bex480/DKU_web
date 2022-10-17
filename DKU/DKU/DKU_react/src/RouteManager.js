@@ -13,6 +13,7 @@ import { AccountContext } from "./userContext/userContext";
 import UserScreen from "./screens/userScreen/userScreen";
 import ProjectDetails from "./screens/projectDetailsScreen/projectDetails";
 import ProjectAdd from "./screens/addProjectScreen/addProject";
+import PasswordReset from "./screens/passwordScreens/passResetScreen/passReset";
 
 export default function RouteManager () {
     const [userData, changeUserData] = useState({
@@ -22,17 +23,17 @@ export default function RouteManager () {
     })
 
     useEffect(() =>{
-        console.log('hello')
-        setInterval(tryIn,5000)
+        console.log('hi')
+        fetchData()
+        setInterval(tryIn, 600000)
     }, [])
     var m=1;
     function tryIn () {
-        sessionStorage.setItem('timer', '1')
         fetchData()
         console.log(m++)
     }
 
-   ///PROBABLY NEED TO DECODE THIS ACCESS TOKEN LATER
+    //PROBABLY NEED TO DECODE THIS ACCESS TOKEN LATER
     const fetchData = async () => {
         const tokenData = JSON.stringify({
             refresh: localStorage.getItem('id') === null ? "" :localStorage.getItem('id').slice(1, -1)
@@ -44,7 +45,6 @@ export default function RouteManager () {
                 body: tokenData
             })
             .then((response) => {
-                console.log(tokenData)
                 if(response.ok) {
                     return response.json()
                 }
@@ -53,8 +53,6 @@ export default function RouteManager () {
                 }
             })
             .then((responseData) => {
-                //console.log(responseData)
-                console.log(responseData.refresh)
                 localStorage.setItem('id', JSON.stringify(responseData.refresh))
                 changeUserData({
                     ...userData,
@@ -77,6 +75,7 @@ export default function RouteManager () {
                 <Route path="korisnik" element={<UserScreen />} />
                 <Route path="projektDetalji" element={<ProjectDetails />} />
                 <Route path="dodajProjekat" element={<ProjectAdd />} />
+                <Route path="resetujPassword" element={<PasswordReset />} />
             </Routes>
         </AccountContext.Provider>
   </BrowserRouter>

@@ -75,6 +75,37 @@ export default function Section2() {
         }}
         fetchData()
 }
+    let host = window.location.hostname;
+    function sendRequst(emailD) {
+        console.log(`https://${host}/auth/users/reset_password/`)
+        console.log(host)
+        var emailData = JSON.stringify({
+            email: emailD
+        })
+
+        const sendEmail = async () => {
+            try{
+                await fetch(`https://${host}/auth/users/reset_password/`, {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: emailData
+                })
+                .then((response) => {
+                    if(response.ok) {
+                        return response.json()
+                    }
+                    else {
+                        throw response
+                    }
+                })
+                .then((responseData) => {
+                    alert('Success!')
+                })
+        }catch (err) {
+            console.error(err)
+        }}
+        sendEmail()
+    }
 
     let isPass = 0;
 
@@ -115,6 +146,15 @@ export default function Section2() {
                     <input type='checkbox' className='secondSectionPassKeepL' />
                     Spremi zaporuku
                 </label>
+                <a className='passForgot' onClick={() => {
+                    var confirmation = prompt('Unesite vaš Email za resetovanje passworda:', '')
+                    if(confirmation === null) {
+                        return
+                    }
+                    else{
+                        sendRequst(confirmation);
+                    }  
+                }}>Zaboravili ste zaporku?</a>
                 <div className='formButtonContainerL'>
                     <button className='secondSectionRegisterButtonL'>Loginuj se</button>
                     <button className='secondSectionGoogleButtonL'>Prijava pomoću Google računa</button>

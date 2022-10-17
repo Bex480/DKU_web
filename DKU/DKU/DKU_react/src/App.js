@@ -37,6 +37,9 @@ function App() {
         <Link className='navigationAnchor' to="/korisnik">
           <button className='navigationButton'>Korisnik</button>  
         </Link>
+        <Link className='navigationAnchor' to="/resetujPassword">
+          <button className='navigationButton'>Reset Password</button>  
+        </Link>
       </section>
     </div>
   );

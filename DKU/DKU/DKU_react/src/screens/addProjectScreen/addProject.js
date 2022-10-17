@@ -13,19 +13,31 @@ export default function ProjectAdd () {
 
     return(
         <div className="mainContainerAD">
-            <form  className="mainFormPD" onSubmit={createProject}>
-                <input placeholder="title"/>
-                <input placeholder="description"/>
-                <input placeholder="max"/>
-                <input placeholder="begins"/>
-                <input placeholder="ends"/>
-                <input placeholder="planned"/>
-                <input placeholder="active"/>
-                <input placeholder="archived"/>
-                <input placeholder="leader_id" value={userData.access.user_id} readOnly={true}/>
-                <input placeholder="supervisor_id"/>
-                <button>Kreiraj Projekat</button>
-            </form>
+            <div className="formContainerAD">
+                <div className="centeringContainerAD">
+                    <h1>Kreiranje Projekta</h1>
+                </div>
+                <div>
+                    <p className="inputTitleAD">Ime projekta</p>
+                    <div className="centeringContainerAD">
+                        <input className="titleInputAD" placeholder="Čišćenje dvorišta..."></input>
+                    </div>
+                </div>
+                <div className="dateContainerAD">
+                    <div>
+                        <p className="inputBeginsAD">Počinje</p>
+                        <div className="centeringContainerAD2">
+                            <input type='datetime-local' className="beginsInputAD" ></input>
+                        </div>
+                    </div>
+                    <div>
+                        <p className="inputEndsAD">Završava se</p>
+                        <div className="centeringContainerAD2">
+                            <input type='datetime-local' className="endsInputAD" ></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
