@@ -23,7 +23,7 @@ export default function RouteManager () {
     })
 
     useEffect(() =>{
-        console.log('hi')
+        //console.log('hi')
         fetchData()
         setInterval(tryIn, 600000)
     }, [])
