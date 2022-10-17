@@ -1,11 +1,12 @@
 import './register.css'
 import jwt_decode from "jwt-decode";
 import React, { useState } from 'react';
-import { icons } from 'react-icons';
+import { useNavigate } from "react-router-dom";
 
 export default function Polje2() {
 
     const [status, changeStatus] = useState(true)
+    const navigate = useNavigate();
 
     function InputField(props) {
         return (
@@ -18,6 +19,7 @@ export default function Polje2() {
                     style={{ backgroundImage: `url(${LoadImages(props.icon)})` }}
                     type={isPass ? 'password' : 'text'}
                     autoComplete='off'
+                    required
                     >
                 </input>
             </div>
@@ -38,7 +40,7 @@ export default function Polje2() {
             username: event.target.elements.third.value,
             password: event.target.elements.fifth.value,
         })
-
+        
         const fetchData = async () => {
             try{
                 await fetch('https://dku-web.vercel.app/register/', {
@@ -82,10 +84,9 @@ export default function Polje2() {
                     }
                 })
                 .then((responseData) => {
-                    var refreshToken = jwt_decode(responseData.refresh)
-                    var accessToken = jwt_decode(responseData.refresh)
-                    localStorage.setItem('id', JSON.stringify(refreshToken))
-                    console.log(refreshToken.user_id)
+                    //var refreshToken = jwt_decode(responseData.refresh)
+                    // var accessToken = jwt_decode(responseData.refresh)
+                    localStorage.setItem('id', JSON.stringify(responseData.refresh))
                 })
                 
         }catch (err) {
@@ -98,7 +99,7 @@ export default function Polje2() {
 
     let isPass = 0;
 
-    function LoadImages(id) {
+    async function LoadImages(id) {
         switch (id) {
             case 1:
                 isPass = 0;
@@ -121,11 +122,13 @@ export default function Polje2() {
                     <input 
                         id='first'
                         placeholder='First-Name'
-                        autoComplete='off'></input>
+                        autoComplete='off'
+                        required></input>
                     <input 
                         id='second'
                         placeholder='Last-Name'
-                        autoComplete='off'></input>
+                        autoComplete='off'
+                        required></input>
                 </div>  
                 <InputField
                     id='third'
@@ -146,7 +149,8 @@ export default function Polje2() {
                     className='secondSectionInputFail'>
                     *Login podaci netačni ili nepotpuni</p>}
                 <button className='secondSectionRegisterButton'>Registruj se</button>
-                <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav'>Prijavite se</a></p>
+                <p className='secondSectionPitanje'>Imate račun? <a className='secondSectionNav' 
+                onClick={() => navigate('/login')}>Prijavite se</a></p>
             </form>
         </section>
     )

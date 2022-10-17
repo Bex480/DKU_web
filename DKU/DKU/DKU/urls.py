@@ -12,6 +12,8 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('register/', include('register.urls')),
     path('projects/', include('projects.urls')),
-    path('profile/', include('profile.urls'))
+    path('profile/', include('profile.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt'))
 ]
 
