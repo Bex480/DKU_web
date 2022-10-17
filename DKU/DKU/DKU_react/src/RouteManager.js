@@ -23,14 +23,12 @@ export default function RouteManager () {
     })
 
     useEffect(() =>{
-        //console.log('hi')
         fetchData()
         setInterval(tryIn, 600000)
     }, [])
-    var m=1;
+
     function tryIn () {
         fetchData()
-        console.log(m++)
     }
 
     //PROBABLY NEED TO DECODE THIS ACCESS TOKEN LATER

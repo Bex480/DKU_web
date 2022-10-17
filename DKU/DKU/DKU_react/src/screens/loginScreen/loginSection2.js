@@ -77,10 +77,8 @@ export default function Section2() {
 }
     let host = window.location.hostname;
     function sendRequst(emailD) {
-        console.log(`https://${host}/auth/users/reset_password/`)
-        console.log(host)
         var emailData = JSON.stringify({
-            email: emailD
+            email: emailD === null ? "" : emailD
         })
 
         const sendEmail = async () => {
