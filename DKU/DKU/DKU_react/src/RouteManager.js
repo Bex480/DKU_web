@@ -23,7 +23,7 @@ export default function RouteManager () {
     })
 
     useEffect(() =>{
-        fetchData()
+        localStorage.getItem('id') === null ? console.log('hi') : fetchData()
         setInterval(tryIn, 600000)
     }, [])
 
